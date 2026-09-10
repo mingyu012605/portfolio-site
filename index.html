@@ -162,9 +162,9 @@
 
           <!-- Card 4: Topology -->
           <article class="project-card" data-dialog="dialog-topology" tabindex="0" role="button" aria-haspopup="dialog">
-            <figure class="media project-card__media" data-expected="assets/images/topology/constrained-rmin30.png">
+            <figure class="media project-card__media" data-expected="assets/images/topology/ref-impeller-modal-response.webp">
               <span class="project-card__badge project-card__badge--status">In Progress</span>
-              <img src="assets/images/topology/constrained-rmin30.png" alt="Converged material layout from the topology optimization" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+              <img src="assets/images/topology/ref-impeller-modal-response.webp" alt="Reference finite-element stress/modal analysis of a topology-optimized impeller, illustrating the class of structural-optimization problems this project builds on" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
               <div class="project-card__overlay"><span>View case study →</span></div>
             </figure>
             <div class="project-card__body">
@@ -222,6 +222,7 @@
         <p class="case-header__eyebrow">Featured Research Project — UBC Sensorimotor Physiology Research Internship</p>
         <h2 class="case-header__title">Real-Time Visual-Inertial Motion Tracking System</h2>
         <p class="case-header__subtitle">Developing a portable ROS2-based motion-tracking pipeline using a Raspberry Pi camera, IMU sensing, ORB-SLAM3, sensor calibration, and experimental validation.</p>
+        <p class="case-header__supervisors">Supervised by Dr. Jean-Sébastien Blouin — Professor, Sensorimotor Physiology Laboratory, School of Kinesiology, UBC — and Dr. Jesse Charlton — Assistant Professor &amp; Director, Applied Musculoskeletal Biomechanics Laboratory, School of Kinesiology, UBC.</p>
         <a href="assets/docs/ubc-kinesiology-reference-letter.pdf" target="_blank" rel="noopener" class="case-header__live-link">📄 View supervisor reference letter (PDF) ↗</a>
       </header>
 
@@ -263,12 +264,26 @@
 
       <section class="case-section">
         <h3>Problem / Goal</h3>
-        <p>Build a portable, real-time visual-inertial tracking system from consumer-grade hardware — a Raspberry Pi camera and a low-cost IMU — and determine whether it could produce trajectory estimates accurate enough to be useful for motion/biomechanics research, rather than assuming an off-the-shelf SLAM pipeline would work out of the box on non-standard hardware.</p>
+        <p>Build a portable, real-time visual-inertial tracking system from consumer-grade hardware, and prove it's accurate enough for real motion/biomechanics research — not just a demo.</p>
+        <ul class="debug-list">
+          <li><strong>Consumer-grade hardware only.</strong> A Raspberry Pi camera and a low-cost IMU — no off-the-shelf motion-capture rig.</li>
+          <li><strong>Real-time, not post-processed.</strong> The pipeline had to produce a live trajectory, not an offline reconstruction.</li>
+          <li><strong>Prove it, don't assume it.</strong> An off-the-shelf SLAM pipeline wasn't guaranteed to work on non-standard hardware — accuracy had to be validated against a known benchmark, not assumed.</li>
+        </ul>
       </section>
 
       <section class="case-section">
         <h3>My Role</h3>
-        <p>As the research intern on this project, I developed the Red Pitaya IMU-streaming interface and the Python/OpenSim visualization pipeline, then developed and evaluated the Visual SLAM pipeline and extended it toward visual-inertial fusion. On the SLAM side specifically: I integrated ORB-SLAM3 into a live ROS2 pipeline, wrote the camera and IMU streaming/bridge scripts, built a custom fisheye calibration workflow around OpenCV, diagnosed and fixed several synchronization and initialization bugs, and designed and ran the physical validation experiments. ORB-SLAM3, OpenCV, OpenSim, and the Fusion AHRS library are third-party tools I integrated, configured, and in some cases patched — not algorithms I invented.</p>
+        <p>As the research intern on this project, I owned the pipeline end to end:</p>
+        <ul class="debug-list">
+          <li><strong>Sensor-streaming foundation.</strong> Built the Red Pitaya IMU-streaming interface and the Python/OpenSim pipeline for real-time motion visualization and biomechanical analysis.</li>
+          <li><strong>Visual SLAM pipeline.</strong> Integrated ORB-SLAM3 into a live ROS2 pipeline and extended it toward visual-inertial fusion.</li>
+          <li><strong>Camera/IMU bridge.</strong> Wrote the streaming and bridge scripts connecting the Raspberry Pi camera and IMU into ROS2.</li>
+          <li><strong>Calibration.</strong> Built a custom fisheye calibration workflow around OpenCV.</li>
+          <li><strong>Debugging.</strong> Diagnosed and fixed several synchronization and initialization bugs.</li>
+          <li><strong>Validation.</strong> Designed and ran the physical experiments that validated tracking accuracy.</li>
+        </ul>
+        <p class="stat-caveat">ORB-SLAM3, OpenCV, OpenSim, and the Fusion AHRS library are third-party tools I integrated, configured, and in some cases patched — not algorithms I invented.</p>
       </section>
 
       <section class="case-section">
@@ -658,6 +673,37 @@
           <figure class="media gallery__item" data-expected="assets/images/topology/constrained-rmin30.png">
             <img src="assets/images/topology/constrained-rmin30.png" alt="Final converged, manufacturable topology result" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
             <figcaption><strong>Final layout:</strong> the manufacturable material distribution (rmin = 3.0) the SIMP/MMA solver settled on for the combined thruster and hydrostatic load cases — chosen for buildability rather than the lowest possible compliance.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section"><h3>Related Research &amp; References</h3>
+        <p>This project was carried out under <strong>Dr. Jasmin Jelovica</strong>, Associate Professor in UBC's Departments of Mechanical and Civil Engineering and head of the <a href="https://lase.mech.ubc.ca/" target="_blank" rel="noopener">Laboratory for Structural Efficiency (LASE)</a>, whose group works on finite-element analysis, topology optimization, and the structural response of marine and ship structures. The figures below are reference images from that wider field of research — not results from my own runs — that I collected to contextualize the tugboat problem within the broader literature on SIMP topology optimization, generative design for manufacturing, and marine structural optimization.</p>
+
+        <div class="gallery gallery--story" data-gallery="topology-references">
+          <figure class="media gallery__item" data-expected="assets/images/topology/ref-topology-optimization-schematic.webp">
+            <img src="assets/images/topology/ref-topology-optimization-schematic.webp" alt="Schematic of a generic topology optimization problem: input domain, load, boundary conditions, and volume fraction on the left, resulting minimum-compliance black-and-white topology on the right" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>The general problem, in one picture:</strong> an input domain with a prescribed load, boundary conditions, and a volume-fraction constraint (here VF&nbsp;=&nbsp;0.40) goes into the optimizer, and a black/white "material or void" layout that minimizes compliance while respecting that constraint comes out. This is exactly the same input-output structure as <code>top88_tugboat.m</code> — domain, thruster/hydrostatic loads, wall/roller boundary conditions, and a 30% volume fraction in; a converged foundation layout out — just drawn for the general case rather than the tugboat-specific one.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/images/topology/ref-bracket-lattice-loadpath.webp">
+            <img src="assets/images/topology/ref-bracket-lattice-loadpath.webp" alt="Topology-optimized bracket showing an organic lattice structure carrying load between two cylindrical mounting bushings" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Material following the load path:</strong> a topology-optimized bracket connecting two mounting points, with the stress contour showing how material concentrates along the principal load paths between them and is removed everywhere else. It's a clean illustration of what SIMP is actually doing under the hood — the same mechanism that, in the tugboat case, redistributes material toward the thruster mounts and the fixed-wall/roller supports rather than filling the whole domain.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/images/topology/ref-scan-to-optimized-bracket.webp">
+            <img src="assets/images/topology/ref-scan-to-optimized-bracket.webp" alt="Five-panel sequence showing an original bracket's CAD geometry, a 3D scan point cloud, an FEA stress result, and a lightweight topology-optimized redesign of the same part" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>The full pipeline, end to end:</strong> original part geometry, a 3D scan/inspection pass, an FEA stress analysis under service loads, and finally a topology-optimized, lightweighted redesign of the same bracket. This is the workflow described in Zegard &amp; Paulino's <em>"Bridging topology optimization and additive manufacturing"</em> (Structural and Multidisciplinary Optimization, 2016) — analyze, optimize, then post-process the result into something that can actually be built, which is the same analyze-then-manufacture logic behind choosing a buildable <code>rmin</code> for the tugboat foundation instead of the raw unconstrained optimum.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/images/topology/ref-impeller-modal-response.webp">
+            <img src="assets/images/topology/ref-impeller-modal-response.webp" alt="Finite-element modal deformation analysis of an impeller-style rotating component inside a housing, with a red stress/displacement hotspot on one blade" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>When the load isn't static:</strong> a modal/frequency-response analysis of a rotating impeller-style component, with the red region showing where a particular vibration mode concentrates deformation. Structural optimization under dynamic or frequency constraints — not just a fixed point load — is a natural extension of the compliance-minimization problem solved here, and is one of the directions LASE's own topology-optimization work (e.g. natural-frequency-constrained optimization of sandwich structures) pushes beyond the static-load case in this project.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/images/topology/ref-dynamic-hydroelastic-response.webp">
+            <img src="assets/images/topology/ref-dynamic-hydroelastic-response.webp" alt="Dynamic vertical-displacement field over a structural panel at a given time step, plotted as a 3D contour surface" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Loads that change with time:</strong> a snapshot of a dynamic vertical-displacement field (Uz) across a panel at a single time step, of the kind produced by hydroelastic or wave-slamming analysis of a marine structure. The tugboat foundation here was solved under static thruster and hydrostatic loads; time-varying hydrodynamic loading like this is the next layer of realism beyond that, and is directly in scope for a marine-structures lab like LASE that studies the response of ship structures under real sea loading.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/images/topology/ref-midship-section-optimization.webp">
+            <img src="assets/images/topology/ref-midship-section-optimization.webp" alt="Four-frame midship section structural optimization: a ship cross-section next to convergence plots for structural weight, minimum adequacy, and vertical bending" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>The same idea, at ship scale:</strong> structural optimization of a full ship midship section — sizing plate thickness and stiffener/frame layout across design iterations to minimize structural weight while keeping strength and stability ("minimum adequacy") within class-society limits. It's a coarser, panel-and-frame-level version of the same weight-vs-strength tradeoff explored at the element level in the tugboat SIMP model, just applied to an entire hull cross-section instead of one foundation.</figcaption>
           </figure>
         </div>
       </section>

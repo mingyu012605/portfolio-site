@@ -646,6 +646,7 @@ main > section {
 }
 .case-header__title { font-size: clamp(1.4rem, 3vw, 1.9rem); }
 .case-header__subtitle { color: var(--text-muted); font-size: 1rem; }
+.case-header__supervisors { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; font-style: italic; }
 .case-header__live-link {
   display: inline-flex;
   align-items: center;
