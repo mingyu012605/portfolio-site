@@ -17,6 +17,8 @@
   --accent-2: #b9793a;
   --accent-2-soft: #f5ead9;
   --danger: #a33;
+  --status-progress-bg: #f4e2b8;
+  --status-progress-fg: #7a5a12;
   --radius-sm: 6px;
   --radius: 10px;
   --radius-lg: 18px;
@@ -429,6 +431,10 @@ main > section {
   padding: 0.3rem 0.6rem;
   border-radius: 999px;
 }
+.project-card__badge--status {
+  background: var(--status-progress-bg);
+  color: var(--status-progress-fg);
+}
 
 .project-card__media {
   position: relative;
@@ -658,6 +664,20 @@ main > section {
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
   opacity: 0.92;
+}
+.case-header__status {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.6rem;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  background: var(--status-progress-bg);
+  color: var(--status-progress-fg);
+  vertical-align: middle;
 }
 
 .case-section {
