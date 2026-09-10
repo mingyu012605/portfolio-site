@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mingyu Song — Engineering Portfolio</title>
+  <meta name="description" content="Engineering portfolio: visual-inertial SLAM, BIM digital twins, structural optimization, fabrication, and interactive software." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
+  <noscript><style>.project-card, .case-section, .reveal, .reveal--stagger > *, img.fade-img { opacity: 1 !important; transform: none !important; } .section-title::after { transform: scaleX(1) !important; }</style></noscript>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="#home">Mingyu Song</a>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navList">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="sr-only">Toggle menu</span>
+      </button>
+      <ul class="nav__list" id="navList">
+        <li><a href="#home" class="nav__link">Home</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= HERO ================= -->
+    <section id="home" class="hero">
+      <svg class="hero__graph" viewBox="0 0 1400 820" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <g class="hero__graph-edges" fill="none">
+          <line class="hero__edge" x1="880" y1="380" x2="700" y2="220" style="animation-delay:0.2s" />
+          <line class="hero__edge hero__edge--warm" x1="880" y1="380" x2="1020" y2="200" style="animation-delay:0.3s" />
+          <line class="hero__edge" x1="880" y1="380" x2="1150" y2="420" style="animation-delay:0.4s" />
+          <line class="hero__edge hero__edge--warm" x1="880" y1="380" x2="980" y2="560" style="animation-delay:0.5s" />
+          <line class="hero__edge" x1="880" y1="380" x2="760" y2="600" style="animation-delay:0.6s" />
+          <line class="hero__edge hero__edge--warm" x1="880" y1="380" x2="620" y2="460" style="animation-delay:0.7s" />
+          <line class="hero__edge" x1="880" y1="380" x2="1240" y2="320" style="animation-delay:0.8s" />
+          <line class="hero__edge hero__edge--warm" x1="880" y1="380" x2="560" y2="340" style="animation-delay:0.9s" />
+          <line class="hero__edge" x1="880" y1="380" x2="900" y2="150" style="animation-delay:1.0s" />
+          <line class="hero__edge hero__edge--faint" x1="700" y1="220" x2="900" y2="150" style="animation-delay:1.1s" />
+          <line class="hero__edge hero__edge--faint" x1="1020" y1="200" x2="1240" y2="320" style="animation-delay:1.15s" />
+          <line class="hero__edge hero__edge--faint" x1="980" y1="560" x2="1150" y2="420" style="animation-delay:1.2s" />
+        </g>
+        <g class="hero__graph-nodes">
+          <circle class="hero__node" cx="700" cy="220" r="6" style="animation-delay:0.9s" />
+          <text class="hero__node-label" x="700" y="204" text-anchor="middle" style="animation-delay:0.9s">SLAM</text>
+
+          <circle class="hero__node hero__node--warm" cx="1020" cy="200" r="6" style="animation-delay:1.0s" />
+          <text class="hero__node-label" x="1020" y="184" text-anchor="middle" style="animation-delay:1.0s">BIM</text>
+
+          <circle class="hero__node" cx="1150" cy="420" r="6" style="animation-delay:1.1s" />
+          <text class="hero__node-label" x="1150" y="404" text-anchor="middle" style="animation-delay:1.1s">Three.js</text>
+
+          <circle class="hero__node hero__node--warm" cx="980" cy="560" r="6" style="animation-delay:1.2s" />
+          <text class="hero__node-label" x="980" y="582" text-anchor="middle" style="animation-delay:1.2s">MATLAB</text>
+
+          <circle class="hero__node" cx="760" cy="600" r="6" style="animation-delay:1.3s" />
+          <text class="hero__node-label" x="760" y="622" text-anchor="middle" style="animation-delay:1.3s">ROS2</text>
+
+          <circle class="hero__node hero__node--warm" cx="620" cy="460" r="5" style="animation-delay:1.4s" />
+          <text class="hero__node-label" x="605" y="452" text-anchor="end" style="animation-delay:1.4s">OpenCV</text>
+
+          <circle class="hero__node" cx="1240" cy="320" r="5" style="animation-delay:1.5s" />
+          <text class="hero__node-label" x="1255" y="316" text-anchor="start" style="animation-delay:1.5s">Raspberry Pi</text>
+
+          <circle class="hero__node hero__node--warm" cx="560" cy="340" r="5" style="animation-delay:1.6s" />
+          <text class="hero__node-label" x="545" y="332" text-anchor="end" style="animation-delay:1.6s">C++</text>
+
+          <circle class="hero__node" cx="900" cy="150" r="5" style="animation-delay:1.7s" />
+          <text class="hero__node-label" x="900" y="134" text-anchor="middle" style="animation-delay:1.7s">Python</text>
+        </g>
+        <circle class="hero__hub-ring" cx="880" cy="380" r="16" fill="none" />
+        <circle class="hero__hub" cx="880" cy="380" r="15" />
+      </svg>
+
+      <div class="hero__inner">
+        <p class="sr-only">Core tools: ROS2, C++, Python, MATLAB, OpenCV, Raspberry Pi, BIM, Three.js</p>
+        <div class="hero__panel">
+          <p class="hero__eyebrow">Engineering Portfolio</p>
+          <h1 class="hero__name">Mingyu Song</h1>
+          <p class="hero__headline">Engineering student building systems across sensing, simulation, computer vision, and the physical world.</p>
+          <p class="hero__sub">I work on projects spanning visual-inertial SLAM, biomechanics, BIM/digital twins, structural optimization, fabrication, and interactive software.</p>
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary">View Projects</a>
+            <a href="#about" class="btn btn--ghost">About Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects" class="projects">
+      <div class="section-inner">
+        <div class="reveal">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-lede">Selected engineering work. Click a project to see the full process — problem, architecture, debugging, and validation, not just the final result.</p>
+        </div>
+
+        <div class="project-grid">
+
+          <!-- Card 1: SLAM -->
+          <article class="project-card project-card--featured" data-dialog="dialog-slam" tabindex="0" role="button" aria-haspopup="dialog">
+            <figure class="media project-card__media" data-expected="assets/images/slam/slam-live-demo-collage.png">
+              <span class="project-card__badge">Featured Research</span>
+              <img src="assets/images/slam/slam-live-demo-collage.png" alt="Live SLAM system demo: Pangolin trajectory viewer, ORB-SLAM3 map viewer and tracked frame, ROS2 terminal logs, and the camera/IMU rig" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+              <div class="project-card__overlay"><span>View case study →</span></div>
+            </figure>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Sensorimotor Physiology Research</h3>
+              <p class="project-card__desc">UBC research internship building a real-time sensing and Visual-Inertial SLAM pipeline — Raspberry Pi camera, 208&nbsp;Hz IMU, ORB-SLAM3, fisheye calibration, and physical movement validation.</p>
+              <ul class="tag-list">
+                <li>ROS2</li><li>C++</li><li>Python</li><li>OpenCV</li><li>ORB-SLAM3</li><li>Raspberry Pi</li>
+              </ul>
+              <p class="project-card__metric">2.5 cm ATE RMSE on the TUM RGB-D benchmark</p>
+            </div>
+          </article>
+
+          <!-- Card 2: FormaLink -->
+          <article class="project-card project-card--featured" data-dialog="dialog-formalink" tabindex="0" role="button" aria-haspopup="dialog">
+            <figure class="media project-card__media" data-expected="assets/images/formalink/ifc-model-loaded.png">
+              <span class="project-card__badge">Featured Research</span>
+              <img src="assets/images/formalink/ifc-model-loaded.png" alt="IFC building model loaded in the FormaLink 3D workspace" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+              <div class="project-card__overlay"><span>View case study →</span></div>
+            </figure>
+            <div class="project-card__body">
+              <h3 class="project-card__title">FormaLink — BIM &amp; 3D Workspace</h3>
+              <p class="project-card__desc">A browser-based IFC/BIM and 3D model workspace with object inspection, measurement, boolean tools, digital-twin data layers, and an AI assistant — grown from an earlier voice-controlled STL/CAD editor.</p>
+              <ul class="tag-list">
+                <li>Three.js</li><li>JavaScript</li><li>IFC/BIM</li><li>Digital Twin</li><li>AI Assistant</li>
+              </ul>
+              <p class="project-card__metric"><a href="https://formalink-app.netlify.app/" target="_blank" rel="noopener">Live demo ↗</a></p>
+            </div>
+          </article>
+
+          <!-- Card 3: Topology -->
+          <article class="project-card" data-dialog="dialog-topology" tabindex="0" role="button" aria-haspopup="dialog">
+            <figure class="media project-card__media" data-expected="assets/images/topology/constrained-rmin30.png">
+              <img src="assets/images/topology/constrained-rmin30.png" alt="Converged material layout from the topology optimization" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+              <div class="project-card__overlay"><span>View case study →</span></div>
+            </figure>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Marine Topology Optimization</h3>
+              <p class="project-card__desc">Adapted a MATLAB SIMP topology-optimization framework for a tugboat thruster foundation under multiple thruster loads and hydrostatic pressure.</p>
+              <ul class="tag-list">
+                <li>MATLAB</li><li>SIMP</li><li>Optimization</li><li>Structural Engineering</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Card 4: Pocket Arena -->
+          <article class="project-card" data-dialog="dialog-pocket-arena" tabindex="0" role="button" aria-haspopup="dialog">
+            <figure class="media project-card__media" data-expected="assets/images/pocket-arena/racing.png">
+              <img src="assets/images/pocket-arena/racing.png" alt="Pocket Arena multiplayer racing game screen" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+              <div class="project-card__overlay"><span>View case study →</span></div>
+            </figure>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Pocket Arena — Multiplayer Game Platform</h3>
+              <p class="project-card__desc">A shared-screen multiplayer platform where phones become controllers over WebSockets — built a server-authoritative racing game with lobby, ranking, and rematch flow.</p>
+              <ul class="tag-list">
+                <li>TypeScript</li><li>Node.js</li><li>Socket.IO</li><li>Three.js</li><li>Numerical Simulation</li>
+              </ul>
+              <p class="project-card__metric">95 automated tests &middot; <a href="https://pocket-arena.onrender.com" target="_blank" rel="noopener">Live demo ↗</a></p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="about">
+      <div class="section-inner section-inner--narrow reveal">
+        <h2 class="section-title">About</h2>
+        <div class="reveal--stagger">
+          <p class="about__text">I'm a Materials Engineering student at UBC interested in building systems that connect computation with the physical world. My work has ranged from visual-inertial motion tracking and IMU sensing to BIM/digital-twin tooling, topology optimization, and real-time interactive software. I especially enjoy projects where solving the problem requires moving between hardware, code, mathematical models, and experimental testing.</p>
+          <p class="about__text">My experience crosses biomechanics, computer vision, sensing, robotics-style systems, structural engineering, BIM, numerical optimization, and interactive software — I don't focus on one discipline because my projects intentionally span several.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="contact">
+      <div class="section-inner section-inner--narrow reveal">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-lede">Reach out about research, collaboration, or opportunities.</p>
+        <ul class="contact-list">
+          <li><span class="contact-list__label">Email</span><a href="mailto:songmingyu922@gmail.com" class="contact-list__value">songmingyu922@gmail.com</a></li>
+          <li><span class="contact-list__label">GitHub</span><a href="https://github.com/mingyu012605/mingyu" target="_blank" rel="noopener" class="contact-list__value">github.com/mingyu012605/mingyu</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Mingyu Song.</p>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- CASE STUDY DIALOGS                                            -->
+  <!-- ============================================================ -->
+
+  <!-- ============ SLAM CASE STUDY ============ -->
+  <dialog id="dialog-slam" class="case-dialog">
+    <div class="case-dialog__inner">
+      <button class="case-dialog__close" data-close-dialog aria-label="Close case study">&times;</button>
+
+      <header class="case-header">
+        <p class="case-header__eyebrow">Featured Research Project — UBC Sensorimotor Physiology Research Internship</p>
+        <h2 class="case-header__title">Real-Time Visual-Inertial Motion Tracking System</h2>
+        <p class="case-header__subtitle">Developing a portable ROS2-based motion-tracking pipeline using a Raspberry Pi camera, IMU sensing, ORB-SLAM3, sensor calibration, and experimental validation.</p>
+        <a href="assets/docs/ubc-kinesiology-reference-letter.pdf" target="_blank" rel="noopener" class="case-header__live-link">📄 View supervisor reference letter (PDF) ↗</a>
+      </header>
+
+      <section class="case-section case-section--demo">
+        <h3>See It In Action</h3>
+        <p>Three clips from testing: the gyro-stabilized pipeline tracking reliably through a full walking loop, the camera-only pipeline running in isolation, and one of the calibration bugs — a gyro under-reading its own rotation — caught on camera mid-test. What the camera and environment were, and how the fix in the first clip came about, follows below.</p>
+        <div class="gallery gallery--demo" data-gallery="slam-demo-reel">
+          <figure class="media gallery__item" data-expected="assets/videos/slam/gyro-stabilized-retest.mp4">
+            <video controls muted playsinline preload="none" poster="assets/images/slam/poster-gyro-stabilized-retest.png" onerror="this.parentElement.classList.add('media--missing')">
+              <source src="assets/videos/slam/gyro-stabilized-retest.mp4" type="video/mp4" />
+            </video>
+            <figcaption><strong>Working result:</strong> walking away from the start and back with the gyro-stabilized pipeline running — tracking holds for the whole loop.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/videos/slam/camera-only-test.mp4">
+            <video controls muted playsinline preload="none" poster="assets/images/slam/poster-camera-only-test.png" onerror="this.parentElement.classList.add('media--missing')">
+              <source src="assets/videos/slam/camera-only-test.mp4" type="video/mp4" />
+            </video>
+            <figcaption><strong>Camera-only tracking:</strong> the map viewer, an RViz trajectory view, and a gyro diagnostic running side-by-side while isolating the camera from the IMU.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/videos/slam/gyro-360-test.mp4">
+            <video controls muted playsinline preload="none" poster="assets/images/slam/poster-gyro-360-test.png" onerror="this.parentElement.classList.add('media--missing')">
+              <source src="assets/videos/slam/gyro-360-test.mp4" type="video/mp4" />
+            </video>
+            <figcaption><strong>A bug, caught on camera:</strong> rotating the rig exactly one full turn — the tracked heading settles near 315° instead of 360°, the gyro-scale issue that had to be fixed before the retest above worked.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <div class="reference-card reference-card--top">
+        <p class="reference-card__quote">&ldquo;I observed demonstrations of their work on several occasions, including a live demonstration of the system operating with the wearable camera while moving about our lab space. Developing such a system involves a number of non-trivial technical challenges, and their work provided them with practical experience applying computer vision and sensor-fusion methods to a real research problem.&rdquo;</p>
+        <p class="reference-card__attribution">Dr. Jesse Charlton — Assistant Professor &amp; Director, Applied Musculoskeletal Biomechanics Laboratory, School of Kinesiology, UBC</p>
+      </div>
+
+      <section class="case-section">
+        <h3>Overview</h3>
+        <p>This work is part of a Sensorimotor Physiology Research Intern position at UBC (Jan–Aug 2026), on real-time sensing, visual-inertial SLAM, and human motion analysis. It grew out of earlier motion-tracking and biomechanics work on the same platform: a Red Pitaya interface streaming real-time IMU data, and a Python pipeline connecting that stream into OpenSim for real-time motion visualization and biomechanical analysis. I also investigated sensor orientation estimation and fusion — working with the VQF algorithm and reading through the xioTechnologies <strong>Fusion</strong> (<code>imufusion</code>) library's AHRS implementation as reference (third-party code, not something I authored).</p>
+        <p>That background led toward visual and visual-inertial SLAM. The resulting system streams camera and IMU data from a Raspberry Pi into a ROS2/WSL environment running ORB-SLAM3, producing a live, scale-corrected trajectory that I validated first against the TUM RGB-D benchmark, then against known-distance walking tests on the custom hardware.</p>
+      </section>
+
+      <section class="case-section">
+        <h3>Problem / Goal</h3>
+        <p>Build a portable, real-time visual-inertial tracking system from consumer-grade hardware — a Raspberry Pi camera and a low-cost IMU — and determine whether it could produce trajectory estimates accurate enough to be useful for motion/biomechanics research, rather than assuming an off-the-shelf SLAM pipeline would work out of the box on non-standard hardware.</p>
+      </section>
+
+      <section class="case-section">
+        <h3>My Role</h3>
+        <p>As the research intern on this project, I developed the Red Pitaya IMU-streaming interface and the Python/OpenSim visualization pipeline, then developed and evaluated the Visual SLAM pipeline and extended it toward visual-inertial fusion. On the SLAM side specifically: I integrated ORB-SLAM3 into a live ROS2 pipeline, wrote the camera and IMU streaming/bridge scripts, built a custom fisheye calibration workflow around OpenCV, diagnosed and fixed several synchronization and initialization bugs, and designed and ran the physical validation experiments. ORB-SLAM3, OpenCV, OpenSim, and the Fusion AHRS library are third-party tools I integrated, configured, and in some cases patched — not algorithms I invented.</p>
+      </section>
+
+      <section class="case-section">
+        <h3>System / Architecture</h3>
+        <p>Hardware: a <a href="https://www.technexion.com/shop/embedded-vision/mipi-csi2/evk/rpi15/tevm-ar0234-c-s191-ir-rpi15/" target="_blank" rel="noopener">TechNexion TEVM-AR0234-C-S191-IR-RPI15</a> camera module for Raspberry Pi, acquired on a Raspberry Pi and streamed over TCP — the camera was never a local USB webcam, which is why a custom acquisition/calibration pipeline was necessary. Per TechNexion's spec sheet, the module carries an onsemi AR0234 global-shutter sensor (1920×1200, MIPI CSI-2) behind a 191.28°-diagonal fisheye lens (the "S191" in the part number — matching the extreme distortion discussed below), plus an onboard ST LSM6DSO16IS IMU, which I sampled at approximately 208&nbsp;Hz.</p>
+
+        <div class="gallery gallery--story" data-gallery="slam-hardware">
+          <figure class="media gallery__item" data-expected="assets/images/slam/hardware-rig.jpg">
+            <img src="assets/images/slam/hardware-rig.jpg" alt="Raspberry Pi, TEVS camera, and IMU hardware rig" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>The rig:</strong> Raspberry Pi (red case, M.2 HAT) connected over a ribbon cable to the TEVS camera module on its 3D-printed mount. Because the IMU is built into the camera module itself, camera and IMU move together as one rigid unit by construction, not because of any extra mounting work.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/images/slam/hardware-detail.jpg">
+            <img src="assets/images/slam/hardware-detail.jpg" alt="Close-up of the camera and IMU module connected to the Raspberry Pi" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Close-up:</strong> the camera module's small carrier board, visible here behind the lens assembly, is where both the AR0234 sensor and the onboard IMU live — a fixed, known camera-to-IMU transform (<code>Tbc</code>) by design, which matters once you're trying to debug whether that transform is configured correctly in software.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/images/slam/lab-setup.jpg">
+            <img src="assets/images/slam/lab-setup.jpg" alt="Lab space with floor markers laid out for a walking test" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Test space:</strong> the lab floor with marker boards laid out along a measured path — this is where the known-distance walking tests referenced later (the 5&nbsp;m scale-calibration test) were actually run.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/images/slam/system-architecture.png">
+            <img src="assets/images/slam/system-architecture.png" alt="System architecture diagram" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Architecture:</strong> camera and IMU streams leave the Pi over TCP, cross into WSL through a Windows portproxy, and become ROS2 topics that ORB-SLAM3 consumes — the diagram below is the text version of this same path.</figcaption>
+          </figure>
+        </div>
+
+        <pre class="ascii-diagram">TechNexion TEVS module — AR0234 image sensor + onboard LSM6DSO16IS IMU
+                         │
+            ┌────────────┴────────────┐
+      image stream                 IMU stream (~208 Hz)
+            │                           │
+   Raspberry Pi acquisition   Raspberry Pi acquisition
+            │                           │
+     TCP / MJPEG stream            TCP stream
+            │                           │
+            └──────────────┬────────────┘
+                    Windows → WSL
+                         │
+                    ROS2 bridge nodes
+                         │
+              /camera/image_raw   /imu/data
+                         │
+                    ORB-SLAM3 (mono-inertial)
+                         │
+              pose · tracking state · trajectory
+                         │
+              trajectory publisher → 3D viewer / live dashboard</pre>
+        <p>ROS2 was the runtime communication layer, not just "data organization" — it let independently-running nodes (camera bridge, IMU bridge, SLAM node, trajectory publisher, dashboard) publish and subscribe without tight coupling, carried per-message timestamps critical for sync, and exposed runtime parameters (e.g. scale correction) that could be changed without relaunching the pipeline.</p>
+        <p>WSL/ROS2 + ORB-SLAM3 was chosen over a MATLAB-based pipeline for this stage of the work: MATLAB doesn't run the pipeline in real time, has no built-in fisheye camera model equivalent to ORB-SLAM3's Kannala-Brandt implementation, and has much weaker IMU/visual-inertial fusion support.</p>
+      </section>
+
+      <section class="case-section">
+        <h3>Engineering Process</h3>
+        <ol class="process-timeline">
+          <li class="process-step"><span class="process-step__num">01</span><div><h4>Baseline</h4><p>Validated ORB-SLAM3 against the known EuRoC <code>MH_01_easy</code> dataset before trusting custom hardware.</p></div></li>
+          <li class="process-step"><span class="process-step__num">02</span><div><h4>Calibrate</h4><p>Built a custom fisheye calibration workflow around OpenCV for the TEVS camera's exact stream resolution and crop.</p></div></li>
+          <li class="process-step"><span class="process-step__num">03</span><div><h4>Integrate</h4><p>Streamed camera and IMU data from the Raspberry Pi into ROS2 over TCP.</p></div></li>
+          <li class="process-step"><span class="process-step__num">04</span><div><h4>Debug</h4><p>Investigated tracking loss, timestamp mismatches, IMU queue gating, motion blur, and initialization failures.</p></div></li>
+          <li class="process-step"><span class="process-step__num">05</span><div><h4>Measure</h4><p>Ran controlled stationary and known-distance movement tests instead of judging the pipeline from a single trajectory plot.</p></div></li>
+          <li class="process-step"><span class="process-step__num">06</span><div><h4>Calibrate Scale</h4><p>Converted the monocular trajectory's arbitrary scale into physical units using a measured-distance test.</p></div></li>
+          <li class="process-step"><span class="process-step__num">07</span><div><h4>Validate</h4><p>Compared against measured motion, with Vicon ground-truth comparison as the next validation step.</p></div></li>
+        </ol>
+      </section>
+
+      <section class="case-section">
+        <h3>Challenges &amp; Debugging</h3>
+        <p>Failures were part of the process, not a footnote — tracking initially failed, calibration needed independent validation, and several distinct bugs had to be isolated one at a time. Here's where it ended up, followed by the problems that had to be worked through to get there.</p>
+
+        <h4>Where it ended up</h4>
+        <p>After the gyro scale/axis fix and the ChArUco recalibration described below, the pipeline went from dropping tracking within seconds to holding a stable lock through real movement tests.</p>
+
+        <div class="gallery gallery--story" data-gallery="slam-fix">
+          <figure class="media gallery__item" data-expected="assets/videos/slam/gyro-stabilized-retest.mp4">
+            <video controls muted playsinline preload="none" poster="assets/images/slam/poster-gyro-stabilized-retest.png" onerror="this.parentElement.classList.add('media--missing')">
+              <source src="assets/videos/slam/gyro-stabilized-retest.mp4" type="video/mp4" />
+            </video>
+            <figcaption><strong>Loop-closure walk:</strong> walking away from the starting point and back to it with the gyro-stabilized pipeline running — <code>TRACKING OK</code> holds for the whole loop, and the trajectory returning close to its own start is a useful sanity check on drift, separate from the RECENTLY_LOST failures shown further down.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/videos/slam/applying-charuco-calibration-1.mp4">
+            <video controls muted playsinline preload="none" poster="assets/images/slam/poster-applying-charuco-calibration-1.png" onerror="this.parentElement.classList.add('media--missing')">
+              <source src="assets/videos/slam/applying-charuco-calibration-1.mp4" type="video/mp4" />
+            </video>
+            <figcaption><strong>Body-tilt robustness test:</strong> checking whether tracked features still match frame-to-frame once the camera tilts with body lean, rather than only validating the pipeline while held level.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/videos/slam/applying-charuco-calibration-2.mp4">
+            <video controls muted playsinline preload="none" poster="assets/images/slam/poster-applying-charuco-calibration-2.png" onerror="this.parentElement.classList.add('media--missing')">
+              <source src="assets/videos/slam/applying-charuco-calibration-2.mp4" type="video/mp4" />
+            </video>
+            <figcaption><strong>Foot trajectory:</strong> the same corrected pipeline tracking a foot's movement path — the kind of measurement the biomechanics/motion-analysis side of this research actually needs, not just a camera held steady.</figcaption>
+          </figure>
+        </div>
+
+        <p>Getting there took working through several distinct problems, one at a time:</p>
+
+        <h4>First hardware attempt: not going okay</h4>
+        <p>Before trusting the pipeline on real hardware, I validated ORB-SLAM3 against the EuRoC <code>MH_01_easy</code> dataset. The first run on the actual TEVS camera and Raspberry Pi rig was a different story: the trajectory's start and end height didn't match, and the plotted path showed the camera moving backward for a segment where, on video, it clearly moved forward two steps. That mismatch was the first sign that calibration and axis conventions — not just "SLAM working or not" — needed real scrutiny.</p>
+
+        <h4>Isolating camera-only and IMU-only before blaming either one</h4>
+        <p>Rather than keep debugging the combined mono-inertial pipeline, I ran the camera and IMU separately. Camera-only tracking (no IMU) was inconsistent between runs — a repeat of the same short path produced two visibly different loops. IMU-only dead-reckoning (no camera/SLAM) showed the orientation drift you'd expect from integrating gyro/accel alone with no visual correction. Neither subsystem was trustworthy in isolation yet, which reframed the problem: get camera-only and IMU-only each behaving predictably first, then combine them.</p>
+
+        <div class="gallery gallery--story" data-gallery="slam-isolate">
+          <figure class="media gallery__item" data-expected="assets/videos/slam/camera-only-test.mp4">
+            <video controls muted playsinline preload="none" poster="assets/images/slam/poster-camera-only-test.png" onerror="this.parentElement.classList.add('media--missing')">
+              <source src="assets/videos/slam/camera-only-test.mp4" type="video/mp4" />
+            </video>
+            <figcaption><strong>Camera-only test setup:</strong> running the camera-only map viewer, an RViz trajectory view, and a separate gyro-only rotation diagnostic side-by-side, specifically to remove the IMU from the SLAM path while still recording what the IMU was reporting for comparison.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/images/slam/imu-only-diagnostics-plot.png">
+            <img src="assets/images/slam/imu-only-diagnostics-plot.png" alt="IMU-only diagnostics: gyro/accel magnitude, stance/swing, AHRS orientation drift" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>IMU-only diagnostics:</strong> gyroscope and accelerometer magnitude, automatically-labeled stance/swing phases, and AHRS orientation over time for a walking test with no camera involved. The orientation trace (bottom panel) keeps drifting rather than settling — expected for dead-reckoning alone, and the reason IMU-only was never meant to stand in for full SLAM.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/videos/slam/imu-only-test.mp4">
+            <video controls muted playsinline preload="none" poster="assets/images/slam/poster-imu-only-test.png" onerror="this.parentElement.classList.add('media--missing')">
+              <source src="assets/videos/slam/imu-only-test.mp4" type="video/mp4" />
+            </video>
+            <figcaption><strong>IMU-only test setup:</strong> a pure gyro/accel dead-reckoning path viewer with the camera feed kept view-only (no ORB feature detection running), so any drift visible here can only be coming from the IMU integration, not from SLAM.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/videos/slam/camera-imu-failed-test.mp4">
+            <video controls muted playsinline preload="none" poster="assets/images/slam/poster-camera-imu-failed-test.png" onerror="this.parentElement.classList.add('media--missing')">
+              <source src="assets/videos/slam/camera-imu-failed-test.mp4" type="video/mp4" />
+            </video>
+            <figcaption><strong>Combined camera+IMU test:</strong> with both sensors feeding the mono-inertial pipeline together, the on-screen status reads <code>RECENTLY_LOST</code> and the live feed shows "Fail to track" — worse than either sensor performed alone. This result is what triggered the six-hypothesis investigation described next.</figcaption>
+          </figure>
+        </div>
+
+        <h4>Why the combined camera+IMU run looked worse than either alone</h4>
+        <p>The first live mono-inertial test tracked briefly then dropped to <code>RECENTLY_LOST</code>. Six candidate explanations were on the table: wrong gyro scale, a timestamp/dropped-sample problem, wrong gyro units (deg/s vs the rad/s ORB-SLAM3 and ROS expect), wrong axis mapping between the IMU and camera frames, a wrong camera-to-IMU transform (<code>Tbc</code>), or camera/IMU samples simply not being synchronized. To test the axis and scale hypotheses directly, I ran a controlled 360° rotation test on the IMU-only dead-reckoning path: rotating the rig exactly 360° integrated out to only about 315° — roughly a 12.5% under-read, giving a correction ratio of <code>360 / 315 ≈ 1.143</code>, though I treated that as a hypothesis to confirm across repeated tests rather than a number to apply blindly. Axis mapping was checked against the expected rotation-plane-to-gyro-channel relationship (rotation in the X–Z plane should appear on gyro_y, X–Y on gyro_z, Y–Z on gyro_x) before accepting the scale correction.</p>
+
+        <div class="gallery gallery--story" data-gallery="slam-gyro">
+          <figure class="media gallery__item" data-expected="assets/images/slam/gyro-axis-mapping-table.png">
+            <img src="assets/images/slam/gyro-axis-mapping-table.png" alt="Table mapping physical rotation plane to expected gyro axis/channel" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Axis-mapping reference:</strong> the expected relationship between the plane you physically rotate the rig in and which gyro channel should register it — used as a checklist to rule out (or confirm) a wrong axis-mapping bug before trusting any scale correction.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/videos/slam/gyro-360-test.mp4">
+            <video controls muted playsinline preload="none" poster="assets/images/slam/poster-gyro-360-test.png" onerror="this.parentElement.classList.add('media--missing')">
+              <source src="assets/videos/slam/gyro-360-test.mp4" type="video/mp4" />
+            </video>
+            <figcaption><strong>360° rotation test:</strong> physically rotating the rig exactly one full turn while watching the integrated gyro heading in RViz. It settles at roughly 315° instead of 360° — a repeatable ~12.5% under-read that pointed at gyro scale rather than random noise as the source of the earlier bad combined-mode trajectory.</figcaption>
+          </figure>
+        </div>
+
+        <ul class="debug-list">
+          <li><strong>Wrong network path.</strong> A stale Windows portproxy entry was forwarding to an old, dead Pi IP (<code>192.168.137.92</code>) instead of the active one (<code>192.168.137.209</code>). Camera frames never reached ROS2, which looked like a SLAM failure but was actually a networking misconfiguration.</li>
+          <li>
+            <strong>Calibration needed real data, not guesses.</strong> An initial calibration with guessed <code>fx</code>/<code>fy</code> (600.0, 600.0) and zeroed distortion coefficients produced 21% obviously-wrong map points — a 191° fisheye lens has ~75.6% distortion, far too extreme for uncalibrated estimates to work. A first checkerboard-based calibration-capture pass then struggled with that same extreme distortion — many frames were logged as "checkerboard: not found" because the warped board didn't fit a standard corner detector. Switching to a ChArUco board (marker-based, robust to partial visibility) finally gave a clean calibration: 74/74 frames accepted at ~0.39&nbsp;px reprojection RMS.
+            <div class="gallery gallery--story" data-gallery="slam-calibration">
+              <figure class="media gallery__item" data-expected="assets/videos/slam/calibration-checkerboard-capture.mp4">
+                <video controls muted playsinline preload="none" poster="assets/images/slam/poster-calibration-checkerboard-capture.png" onerror="this.parentElement.classList.add('media--missing')">
+                  <source src="assets/videos/slam/calibration-checkerboard-capture.mp4" type="video/mp4" />
+                </video>
+                <figcaption><strong>Checkerboard capture attempt:</strong> the capture tool repeatedly logs "checkerboard: not found" against the live fisheye feed — the 191° lens warps the board too much near the edges of the frame for a standard checkerboard detector, which is the concrete failure that motivated switching to ChArUco.</figcaption>
+              </figure>
+              <figure class="media gallery__item" data-expected="assets/images/slam/camera-calibration.jpg">
+                <img src="assets/images/slam/camera-calibration.jpg" alt="ChArUco calibration capture" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+                <figcaption><strong>ChArUco capture (successful):</strong> the marker-based board that replaced the checkerboard — because each square carries its own identifiable marker, the detector can still calibrate from partially-visible or distorted views, which is what got the 74/74-frame, 0.39&nbsp;px-RMS result.</figcaption>
+              </figure>
+            </div>
+          </li>
+          <li><strong><code>PredictStateIMU()</code> crash.</strong> The mono-inertial pipeline could segfault when inertial prediction ran without enough valid IMU samples for the current image interval. Fixed by gating inertial processing behind a minimum-sample check (≥2 usable IMU samples) and adding <code>NO_IMU_RECEIVED</code> diagnostics tracking sample count, measured frequency, and accel/gyro magnitude.</li>
+          <li><strong>Clock misalignment.</strong> The Raspberry Pi's clock was initially off by several days, and after fixing that, a residual ~10–12&nbsp;second offset still needed investigation — significant when the IMU runs at 208&nbsp;Hz but images arrive far less often.</li>
+          <li><strong>Stationary-gating bug.</strong> A staged test flow waited for a stable period before starting a movement trial, but at 208&nbsp;Hz a single noise spike could reset an otherwise-valid multi-second stationary countdown. Fixed with a ~150&nbsp;ms debounce/grace window rather than just loosening the motion threshold.</li>
+          <li><strong>Motion blur limited tracking more than calibration did.</strong> A live test (\"Attempt C\") reached 74.8% frames tracked OK, but the effective incoming frame rate was only ~2.9&nbsp;Hz versus a much higher camera-side target — pointing at streaming/encoding throughput and exposure settings, not intrinsics, as the next bottleneck. Shutter/gain (e.g. 4000/16 → tested against 1000/4) were tuned to trade brightness for reduced blur.</li>
+          <li><strong>Monocular scale was wrong by 9.36×, not 0.94×.</strong> A 5&nbsp;m walking test produced a trajectory reading ~0.534&nbsp;m; the correction factor is <code>5 / 0.534 ≈ 9.36</code>. This became a reusable scale-calibration workflow (a <code>scale_calibration_watcher</code> applying a saved factor via ROS2 parameters) instead of a one-off manual multiplication.</li>
+          <li><strong>Physical straight line ≠ SLAM's +X axis.</strong> Monocular SLAM has no gravity/compass reference tying its world frame to the room — the world axes are defined by the initial camera pose. A straight physical walk can show up as motion across several SLAM axes; this is a constant rotational offset, not random tracking failure.</li>
+          <li><strong>Hardware failure.</strong> The camera fell during a measured-distance test and the FFC ribbon cable connecting it to the Pi disconnected/was damaged — diagnosed as a likely connector-level fault rather than assuming the camera or Pi itself was destroyed.</li>
+        </ul>
+
+        <p>With the gyro scale correction applied, the axis mapping confirmed, and the ChArUco calibration rolled out, the retest at the top of this section is what came out the other side.</p>
+      </section>
+
+      <section class="case-section">
+        <h3>Testing / Validation</h3>
+        <p>Before testing on custom hardware, I validated the Visual SLAM pipeline against the TUM RGB-D benchmark — a standard research dataset with ground-truth camera trajectories — and measured an absolute trajectory error (RMSE) of approximately 2.5&nbsp;cm. Once the pipeline could track reliably on real hardware, testing shifted from "does SLAM run?" to "does the trajectory correspond to real movement?" — stationary tests (to characterize baseline jitter from image noise, vibration, and IMU bias rather than expecting a mathematical zero), a 5&nbsp;m known-distance walking test for scale calibration, and directional tests examining individual axis displacement, initialization stability, and trajectory shape. A Vicon motion-capture comparison is the planned next step — run the same physical motion through both systems and compare position, scale, orientation, and drift, rather than assuming simultaneous operation alone would improve ORB-SLAM3.</p>
+      </section>
+
+      <section class="case-section">
+        <h3>Results</h3>
+        <div class="stat-grid">
+          <div class="stat"><span class="stat__value">2.5&nbsp;cm</span><span class="stat__label">Absolute trajectory RMSE on the TUM RGB-D benchmark</span></div>
+          <div class="stat"><span class="stat__value">0.39&nbsp;px</span><span class="stat__label">Fisheye calibration RMS (ChArUco)</span></div>
+          <div class="stat"><span class="stat__value">208&nbsp;Hz</span><span class="stat__label">IMU sampling rate</span></div>
+          <div class="stat"><span class="stat__value">74.8%</span><span class="stat__label">Frames tracked OK in a 722-frame live test</span></div>
+          <div class="stat"><span class="stat__value">1,758</span><span class="stat__label">Peak tracked features in that test</span></div>
+          <div class="stat"><span class="stat__value">9.36×</span><span class="stat__label">Measured monocular scale correction over 5&nbsp;m</span></div>
+        </div>
+        <p class="stat-caveat">These numbers describe specific test runs and benchmarks, not a single universal accuracy figure — e.g. 74.8% is the tracking-OK rate for one live 722-frame session on custom hardware, separate from the 2.5&nbsp;cm TUM RGB-D benchmark result above it.</p>
+
+        <div class="gallery gallery--story" data-gallery="slam-results">
+          <figure class="media gallery__item" data-expected="assets/images/slam/live-dashboard.png">
+            <img src="assets/images/slam/live-dashboard.png" alt="Live trajectory dashboard" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Live dashboard:</strong> a browser-based view of <code>live_pose.csv</code> as the pipeline runs, showing the current trajectory and tracking status without needing the Pangolin viewer open.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/images/slam/trajectory-5m.png">
+            <img src="assets/images/slam/trajectory-5m.png" alt="Scaled 5 meter trajectory plot" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Scale-corrected 5&nbsp;m trajectory:</strong> the same walking-test trajectory after applying the 9.36× scale correction — the plotted path length now matches the physically measured 5&nbsp;m distance instead of the raw ~0.534&nbsp;m the monocular pipeline originally reported.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h3>Technologies</h3>
+        <ul class="tag-list tag-list--wrap">
+          <li>C++</li><li>Python</li><li>Linux</li><li>WSL</li><li>Raspberry Pi</li><li>Red Pitaya</li><li>ROS2</li>
+          <li>ORB-SLAM3 (integrated)</li><li>OpenCV (integrated)</li><li>OpenSim (integrated)</li><li>Fisheye / Kannala-Brandt camera model</li>
+          <li>IMU sensor fusion concepts</li><li>xioTechnologies Fusion library (investigated/referenced)</li>
+          <li>TUM RGB-D / EuRoC benchmarks</li><li>TCP streaming</li><li>Networking / port-forwarding debugging</li><li>Data visualization</li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h3>What I Learned</h3>
+        <p>The biggest lesson was isolating variables in a system with many moving parts: camera-only runs to remove the IMU as a variable, dataset baselines to rule out hardware before blaming the algorithm, and diagnostics (tracking state, feature counts, IMU sample rate) instead of judging the system from a single trajectory screenshot. Several "SLAM problems" — the portproxy misroute, the scale error, the axis-offset confusion — turned out to be systems or math-convention issues once properly isolated, which changed how I approach debugging integrated hardware/software pipelines going forward.</p>
+      </section>
+
+    </div>
+  </dialog>
+
+  <!-- ============ FORMALINK CASE STUDY ============ -->
+  <dialog id="dialog-formalink" class="case-dialog">
+    <div class="case-dialog__inner">
+      <button class="case-dialog__close" data-close-dialog aria-label="Close case study">&times;</button>
+      <header class="case-header">
+        <p class="case-header__eyebrow">Featured Research Project</p>
+        <h2 class="case-header__title">FormaLink — BIM &amp; 3D Workspace</h2>
+        <p class="case-header__subtitle">A browser workspace for inspecting, measuring, and layering data onto IFC/BIM and 3D models.</p>
+        <a href="https://formalink-app.netlify.app/" target="_blank" rel="noopener" class="case-header__live-link">▶ Try the live app — formalink-app.netlify.app</a>
+      </header>
+
+      <section class="case-section"><h3>Overview</h3>
+        <p>This started as a browser-based CAD editor: a Three.js STL viewer/editor with face selection, scaling, color changes, primitive creation, undo/redo, and AI-driven voice commands for those same operations (plus group actions, importing .glb models, and random model generation). It has since grown into FormaLink, a browser workspace that loads GLTF/GLB/IFC/CAD project files into an interactive 3D "coordination view" with object inspection, measurement, and digital-twin data layers — aimed at making BIM/3D model review possible without desktop software.</p></section>
+
+      <section class="case-section"><h3>Problem / Goal</h3>
+        <p>Desktop BIM/CAD tools are the standard way to inspect a building or 3D model, but they're heavy to set up just to look something up or take a measurement. The goal was a browser tool that could load a model — whether a simple mesh or a full IFC building — and make it explorable: select anything, see its properties, and layer operational data on top.</p></section>
+
+      <section class="case-section"><h3>My Role</h3>
+        <p>I built the original Three.js STL editor and its voice-command layer, then built out FormaLink's model loading (GLTF/GLB/IFC), the Object Inspector, measurement and section-plane tools, boolean operations, the digital-twin data layers, and the in-app AI chat assistant. Three.js, the IFC-parsing stack, and the underlying AI/chat API are third-party tools I integrated and built on top of — not something I wrote from scratch.</p></section>
+
+      <section class="case-section"><h3>System / Architecture</h3>
+        <p>FormaLink loads models (<code>.gltf</code>, <code>.glb</code>, <code>.ifc</code>, <code>.cadproject</code>) into a Three.js viewport with orbit/zoom/select navigation, fixed view angles (Top/Front/Right/Iso/Fit/Back), and switchable backgrounds (Light/Blueprint/Dark/Grid). Selecting any element opens the Object Inspector (dimensions, area, volume, color, transform); a separate toolset adds section planes with XYZ control and boolean operations (Union/Subtract/Intersect). A "Digital Twin" panel overlays simulated Energy, Occupancy, and Maintenance data with live weather and time-based simulation, and level filtering isolates individual floors in multi-story buildings. Projects can be saved/reopened with autosave recovery, exported as GLB, and edited with full undo/redo — all backed by an in-app AI chat assistant for model queries and commands.</p>
+
+        <div class="gallery gallery--story" data-gallery="formalink-arch">
+          <figure class="media gallery__item" data-expected="assets/images/formalink/app-launcher.png">
+            <img src="assets/images/formalink/app-launcher.png" alt="FormaLink launcher showing recent, sample IFC, and sample GLB files" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Launcher:</strong> the entry screen listing recent files plus built-in samples in both supported formats — an IFC MEP building model and several Khronos glTF/GLB samples — so the viewer/loading path can be exercised without needing your own file first.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/images/formalink/ifc-model-loaded.png">
+            <img src="assets/images/formalink/ifc-model-loaded.png" alt="IFC building model loaded in the FormaLink 3D coordination view" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Coordination view:</strong> the sample IFC MEP model loaded and rendered in the 3D workspace, with the Object Inspector, Structure panel, and view controls (Top/Front/Right/Iso/Fit) visible on the right and bottom.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/images/formalink/object-inspector.png">
+            <img src="assets/images/formalink/object-inspector.png" alt="Object Inspector panel showing dimensions and properties" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Object Inspector:</strong> selecting an element in the model populates this panel with its dimensions, area, volume, color, and transform — this is what a "select to inspect" workflow actually returns.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section"><h3>Engineering Process</h3>
+        <p>Started with STL loading and display in Three.js, added selection and basic transforms (scale, color), then undo/redo and primitive creation, then a voice-command layer mapped onto those same operations.</p>
+
+        <div class="gallery gallery--story" data-gallery="formalink-voice">
+          <figure class="media gallery__item" data-expected="assets/videos/formalink/voice-edit-demo.mp4">
+            <video controls muted playsinline preload="none" onerror="this.parentElement.classList.add('media--missing')">
+              <source src="assets/videos/formalink/voice-edit-demo.mp4" type="video/mp4" onerror="this.closest('figure').classList.add('media--missing')" />
+            </video>
+            <figcaption><strong>Early CAD-editor phase:</strong> a voice command triggering one of the mapped operations (scale/color/primitive/undo/redo) on the loaded STL geometry — the same operation set the UI buttons call, which is what let voice edits stay compatible with undo/redo.</figcaption>
+          </figure>
+        </div>
+
+        <p>Moving to FormaLink meant adding IFC parsing alongside the existing GLB/GLTF path, building the Object Inspector and measurement/section/boolean tools, then layering on the digital-twin data (energy/occupancy/maintenance, weather, time simulation) and the chat assistant last, once the core viewer was solid.</p>
+      </section>
+
+      <section class="case-section"><h3>Challenges &amp; Debugging</h3>
+        <p>The main difficulty was keeping AI-driven edits (voice commands in the CAD-editor phase, chat commands in FormaLink) consistent with the same undo/redo history as direct manipulation, so an AI-issued edit could be undone exactly like a mouse-driven one. Supporting IFC alongside mesh formats (GLTF/GLB/STL) in a single object model was the other major piece — IFC carries semantic building metadata that a raw mesh doesn't, so the Object Inspector and selection logic had to handle both without treating IFC as "just another mesh."</p></section>
+
+      <section class="case-section"><h3>Testing / Validation</h3>
+        <p>Validated against a range of sample files spanning both formats: Khronos glTF sample models (Sponza Atrium, Geodesic Dome, Transit Hub, Biome Greenhouse, Industrial Complex, Glass Skyscraper) and IFC building samples (an RME MEP sample project, a heritage-building IFC model), checking that loading, selection, measurement, and the data-layer tools behaved consistently across both.</p></section>
+
+      <section class="case-section"><h3>Results</h3>
+        <p>A deployed, working app — not just a local demo. You can open the live link above, load any of the built-in sample models, and use the inspector/measurement/digital-twin tools directly.</p>
+      </section>
+
+      <section class="case-section"><h3>Technologies</h3>
+        <ul class="tag-list tag-list--wrap"><li>Three.js</li><li>JavaScript</li><li>Node.js</li><li>STL / GLTF / GLB / IFC</li><li>OpenAI API integration</li><li>Git/GitHub</li><li>Netlify</li></ul></section>
+
+      <section class="case-section"><h3>What I Learned</h3>
+        <p>Voice/chat input is far more reliable when it's constrained to a well-defined set of operations than when it tries to accept open-ended natural-language editing — mapping AI commands onto the exact same functions the UI buttons call (rather than a separate code path) is what kept undo/redo trustworthy. I also learned how much a project's scope can grow once you find the right frame for it — a small STL editor became a genuinely useful BIM coordination tool once IFC support and data layers were added.</p></section>
+    </div>
+  </dialog>
+
+  <!-- ============ TOPOLOGY CASE STUDY ============ -->
+  <dialog id="dialog-topology" class="case-dialog">
+    <div class="case-dialog__inner">
+      <button class="case-dialog__close" data-close-dialog aria-label="Close case study">&times;</button>
+      <header class="case-header">
+        <p class="case-header__eyebrow">Project — Structural Optimization Research Assistant, Summer 2026</p>
+        <h2 class="case-header__title">Topology Optimization of a Marine Thruster Foundation</h2>
+        <p class="case-header__subtitle">Minimizing structural deformation under a 30% material budget for an underwater tugboat thruster foundation, using a MATLAB SIMP/MMA pipeline adapted from a published benchmark code.</p>
+      </header>
+
+      <section class="case-section"><h3>Overview</h3>
+        <p>Topology optimization finds the material layout that minimizes structural deformation (compliance) for a given amount of material — here, at most 30% of the available design space. The starting point was <code>top88mma.m</code>: an MMA-optimizer (Method of Moving Asymptotes) version of the well-known 88-line SIMP topology-optimization code published by Andreassen et al. (2010). That reference code solves a simple cantilever benchmark (a half MBB-beam) under one point load. I modified it into <code>top88_tugboat.m</code> to solve a different, more realistic problem: an underwater structure supporting propulsion thrusters, loaded by two separate thruster forces plus hydrostatic water pressure, fixed to a wall on one side with a sliding support on another.</p>
+
+        <div class="gallery gallery--story" data-gallery="topology-loop">
+          <figure class="media gallery__item" data-expected="assets/images/topology/oc-loop-diagram.png">
+            <img src="assets/images/topology/oc-loop-diagram.png" alt="Six-step topology optimization loop: FE analysis, compliance, sensitivity, filtering, update, convergence check" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>The general SIMP loop:</strong> FE analysis solves for displacement under the current material distribution, compliance and its sensitivity to each element's density are computed, the sensitivities are filtered to avoid checkerboard artifacts, the density is updated, and the loop repeats until it converges. This diagram shows the classic Optimality-Criteria (OC) update step; <code>top88mma.m</code> and <code>top88_tugboat.m</code> replace that OC update with the MMA optimizer for better convergence stability, without changing the rest of the loop.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section"><h3>Problem / Goal</h3>
+        <p>Find a material layout for the thruster foundation that minimizes compliance under real operating loads — two thruster loading conditions plus hydrostatic pressure, at a 30% volume fraction — rather than the single idealized point load the reference benchmark was built for.</p></section>
+
+      <section class="case-section"><h3>My Role</h3>
+        <p>As a Structural Optimization Research Assistant (Summer 2026), I executed and modified the MATLAB topology-optimization code — adapting <code>top88mma.m</code>'s problem formulation, mesh, loads, and boundary conditions for the tugboat case — and applied density-based SIMP to investigate efficient material distributions. I also studied alternative approaches (Level-Set, BESO), comparing their computational efficiency, performance, and parameter sensitivity against SIMP. The SIMP method, the MMA optimizer, and the original 88-line benchmark are established techniques from the literature, not something I invented — my contribution was adapting and applying them to this specific engineering problem.</p></section>
+
+      <section class="case-section"><h3>System / Architecture</h3>
+        <p>The tugboat problem uses a 60×30-element mesh (versus the original benchmark's 60×20), a 30% volume fraction, and multiple simultaneous load cases (two thruster forces + hydrostatic pressure) against a fixed-wall-plus-roller support condition — all defined in MATLAB and iterated with the MMA optimizer under SIMP penalization. The results below show that domain converging under different filter-radius and penalization settings.</p>
+      </section>
+
+      <section class="case-section"><h3>Engineering Process</h3>
+        <p>Started from <code>top88mma.m</code>, defined the tugboat domain/loads/boundary conditions to produce <code>top88_tugboat.m</code>, then ran a parameter sweep rather than accepting the first converged result: varying the filter radius (<code>rmin</code>) from 0.5 up to 3–5, the penalization exponent, and the volume fraction, to understand how each choice traded off mathematical optimality against manufacturability. Level-Set and BESO were then studied separately as alternative optimization approaches for comparison.</p></section>
+
+      <section class="case-section"><h3>Challenges &amp; Debugging</h3>
+        <p>The main engineering challenge was translating an academic single-load-case optimization script into one that handled multiple simultaneous, physically meaningful load cases for a real marine structure — and then recognizing that the optimizer's mathematically best answer wasn't automatically the right engineering answer. At a small filter radius (<code>rmin</code>&nbsp;=&nbsp;0.5), the optimizer converged to a lower-compliance design (~1465) with many small holes in a checkerboard-like pattern, very thin members, and sharp angles — lower deformation on paper, but effectively impossible to manufacture (thin walls fail under precision, fatigue, and stress-concentration constraints that the optimizer doesn't model). Increasing <code>rmin</code> to 3.0 forced thicker, smoother members at a modest compliance cost, producing a design that could actually be built.</p>
+
+        <div class="gallery gallery--story" data-gallery="topology-rmin-compare">
+          <figure class="media gallery__item" data-expected="assets/videos/topology/unconstrained-rmin05.mp4">
+            <video controls muted playsinline preload="none" poster="assets/images/topology/poster-unconstrained-rmin05.png" onerror="this.parentElement.classList.add('media--missing')">
+              <source src="assets/videos/topology/unconstrained-rmin05.mp4" type="video/mp4" />
+            </video>
+            <figcaption><strong>Unconstrained (rmin = 0.5), live in MATLAB:</strong> compliance converges to ~1464.94 — the lowest-deformation answer the optimizer can find, but the checkerboard pattern and paper-thin members make it impossible to actually manufacture.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/images/topology/constrained-rmin30.png">
+            <img src="assets/images/topology/constrained-rmin30.png" alt="Constrained topology result at rmin=3.0, thick smooth members" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Constrained (rmin = 3.0):</strong> the same load case and 30% volume fraction, but with the filter radius forcing thicker, smoother members — slightly higher compliance, but a design that can actually be built.</figcaption>
+          </figure>
+        </div>
+
+        <p>The same trend showed up at a different problem scale too: a baseline cantilever run at <code>rmin</code>&nbsp;=&nbsp;1.5 reached ~65 compliance with thin, complex features, while <code>rmin</code>&nbsp;=&nbsp;4 on the same problem reached ~75 with visibly smoother, thicker geometry. Neither result is "wrong" — they represent different points on the same optimality-vs-manufacturability tradeoff, which is a real engineering decision, not a bug to fix.</p>
+
+        <div class="gallery gallery--story" data-gallery="topology-rmin-sweep">
+          <figure class="media gallery__item" data-expected="assets/images/topology/baseline-cantilever.png">
+            <img src="assets/images/topology/baseline-cantilever.png" alt="Original top88 cantilever benchmark result" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Reference benchmark:</strong> the unmodified <code>top88</code> half-MBB-beam cantilever result (compliance ~215) — the baseline sanity check before comparing any tugboat-specific runs.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/images/topology/tugboat-rmin15.png">
+            <img src="assets/images/topology/tugboat-rmin15.png" alt="Tugboat topology result at rmin=1.5" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Tugboat, rmin = 1.5:</strong> compliance ~65 — a complex X-shape with thin members, close to the unconstrained end of the tradeoff.</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/images/topology/tugboat-rmin4.png">
+            <img src="assets/images/topology/tugboat-rmin4.png" alt="Tugboat topology result at rmin=4, smoother thicker members" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Tugboat, rmin = 4:</strong> compliance ~75 — the same load case, but a stronger filter radius produces visibly smoother, thicker members at a modest compliance cost.</figcaption>
+          </figure>
+        </div>
+
+        <p>Filter radius wasn't the only knob I swept — the SIMP penalization exponent has a similar effect. At <code>rmin</code>&nbsp;=&nbsp;1.5, going from the standard <code>penal</code>&nbsp;=&nbsp;3 to a stronger <code>penal</code>&nbsp;=&nbsp;4 pushed intermediate densities harder toward clean 0/1 solid-or-void decisions, trading a small compliance increase (~65&nbsp;→&nbsp;~68) for a visibly simpler, blacker-and-whiter structure — a second, independent way to trade optimality for manufacturability besides the filter radius.</p>
+
+        <div class="gallery gallery--story" data-gallery="topology-penalty-compare">
+          <figure class="media gallery__item" data-expected="assets/images/topology/tugboat-penal3.png">
+            <img src="assets/images/topology/tugboat-penal3.png" alt="Tugboat topology result at standard penalization, penal=3" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Standard penalization (penal = 3):</strong> compliance ~65 — the default penalization exponent, same X-shape as the rmin=1.5 result above (same run).</figcaption>
+          </figure>
+          <figure class="media gallery__item" data-expected="assets/videos/topology/penalty-comparison-penal4.mp4">
+            <video controls muted playsinline preload="none" poster="assets/images/topology/poster-penalty-comparison-penal4.png" onerror="this.parentElement.classList.add('media--missing')">
+              <source src="assets/videos/topology/penalty-comparison-penal4.mp4" type="video/mp4" />
+            </video>
+            <figcaption><strong>Stronger penalization (penal = 4), live in MATLAB:</strong> compliance ~68 — a modest increase in exchange for a visibly cleaner, more solid/void (less gray) structure.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section"><h3>Testing / Validation</h3>
+        <p>Compared convergence and resulting material layout across SIMP, Level-Set, and BESO approaches to sanity-check that the optimized geometry wasn't an artifact of one specific method, and separately ran the <code>rmin</code>/penalization/volume-fraction sweep described above to characterize how sensitive the result was to each optimization parameter rather than reporting a single unvalidated run.</p></section>
+
+      <section class="case-section"><h3>Results</h3>
+        <p>A converged material distribution for the foundation under combined thruster and hydrostatic loading, plus a characterized tradeoff between compliance and manufacturability across filter-radius settings.</p>
+
+        <div class="stat-grid">
+          <div class="stat"><span class="stat__value">30%</span><span class="stat__label">Material volume fraction constraint</span></div>
+          <div class="stat"><span class="stat__value">60×30</span><span class="stat__label">Mesh elements (tugboat domain)</span></div>
+          <div class="stat"><span class="stat__value">~1465</span><span class="stat__label">Compliance, unconstrained (rmin=0.5) — not manufacturable</span></div>
+          <div class="stat"><span class="stat__value">~65 → ~75</span><span class="stat__label">Compliance, rmin 1.5 → 4 on the same problem</span></div>
+        </div>
+        <p class="stat-caveat">Compliance values are relative to each specific run's units/mesh, not a standardized metric — the point is the direction of the tradeoff (lower <code>rmin</code> → lower compliance but unbuildable; higher <code>rmin</code> → slightly higher compliance but manufacturable), not the absolute numbers.</p>
+
+        <div class="gallery gallery--story" data-gallery="topology-results">
+          <figure class="media gallery__item" data-expected="assets/images/topology/constrained-rmin30.png">
+            <img src="assets/images/topology/constrained-rmin30.png" alt="Final converged, manufacturable topology result" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Final layout:</strong> the manufacturable material distribution (rmin = 3.0) the SIMP/MMA solver settled on for the combined thruster and hydrostatic load cases — chosen for buildability rather than the lowest possible compliance.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section"><h3>Technologies</h3>
+        <ul class="tag-list tag-list--wrap"><li>MATLAB</li><li>SIMP</li><li>MMA optimizer</li><li>Level-Set (researched)</li><li>BESO (researched)</li><li>Finite-element analysis</li><li>Structural mechanics</li></ul></section>
+
+      <section class="case-section"><h3>What I Learned</h3>
+        <p>Manufacturing constraints aren't restrictions on an otherwise-perfect answer — they're part of the actual engineering problem. A mathematically lower-compliance design with paper-thin, checkerboarded members is useless if it can't be built, inspected, or trusted not to fail; the job isn't to find the mathematically perfect solution, it's to find the best solution that can actually be built, maintained, and operated in the real world. Running the same problem across a range of filter radii, rather than accepting the first converged result, is what made that tradeoff visible instead of implicit.</p></section>
+    </div>
+  </dialog>
+
+  <!-- ============ POCKET ARENA CASE STUDY ============ -->
+  <dialog id="dialog-pocket-arena" class="case-dialog">
+    <div class="case-dialog__inner">
+      <button class="case-dialog__close" data-close-dialog aria-label="Close case study">&times;</button>
+      <header class="case-header">
+        <p class="case-header__eyebrow">Project</p>
+        <h2 class="case-header__title">Pocket Arena — Real-Time Multiplayer Game Platform</h2>
+        <a href="https://pocket-arena.onrender.com" target="_blank" rel="noopener" class="case-header__live-link">▶ Try the live app — pocket-arena.onrender.com</a>
+      </header>
+
+      <section class="case-section"><h3>Overview</h3>
+        <p>A shared-screen multiplayer platform: a laptop/desktop acts as the game display, and 1–4 players join with their phones, which become motion/touch controllers.</p></section>
+
+      <section class="case-section"><h3>Problem / Goal</h3>
+        <p>Build a real-time multiplayer game architecture that needs no dedicated controllers or app installs — just phones and a shared screen — and validate it with a full racing game including lobby, race, and results flow.</p></section>
+
+      <section class="case-section"><h3>My Role</h3>
+        <p>I designed and built the full stack: the server-authoritative Socket.IO architecture (synchronized mobile input, reconnect handling, game state), the phone controller interface (motion calibration, sensitivity tuning), the 60&nbsp;Hz fixed-timestep vehicle simulation, and the automated test suite. I later began migrating parts of the racing/golf prototypes to Unity. This project is still actively being developed, not a finished/shipped product.</p></section>
+
+      <section class="case-section"><h3>System / Architecture</h3>
+        <pre class="ascii-diagram">phone controllers
+      │
+      ▼
+WebSocket / Socket.IO
+      │
+      ▼
+Node.js game server (server-authoritative)
+      │
+      ▼
+shared simulation state
+      │
+      ▼
+desktop/laptop game display</pre>
+
+        <div class="gallery gallery--story" data-gallery="pocket-arena-overview">
+          <figure class="media gallery__item" data-expected="assets/images/pocket-arena/racing.png">
+            <img src="assets/images/pocket-arena/racing.png" alt="Racing game screen" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
+            <figcaption><strong>Shared screen view:</strong> the 3D racing game as it appears on the desktop/laptop display that every phone controller is steering into — this is the view the architecture diagram above is built to drive.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section"><h3>Engineering Process</h3>
+        <p>Built the networking/lobby layer first, then a 60&nbsp;Hz fixed-timestep vehicle simulation with track-relative motion modelling running on a closed-loop Catmull-Rom spline track system, then game-flow states (lobby → countdown → race → results → rematch), then phone-side motion calibration, then a Unity migration for parts of the racing and golf prototypes.</p></section>
+
+      <section class="case-section"><h3>Challenges &amp; Debugging</h3>
+        <p>Key problems included keeping simulation state consistent and fair across phones with different network latency (server-authoritative logic), calibrating phone tilt input to feel responsive without being twitchy, and handling edge cases like falling off track, respawning, and airborne behavior in the vehicle simulation.</p>
+
+        <div class="gallery gallery--story" data-gallery="pocket-arena-demo">
+          <figure class="media gallery__item" data-expected="assets/videos/pocket-arena/multiplayer-demo.mp4">
+            <video controls muted playsinline preload="none" onerror="this.parentElement.classList.add('media--missing')">
+              <source src="assets/videos/pocket-arena/multiplayer-demo.mp4" type="video/mp4" onerror="this.closest('figure').classList.add('media--missing')" />
+            </video>
+            <figcaption><strong>Multiplayer demo:</strong> multiple phones connected as controllers into one shared race, showing the lobby → countdown → race flow and server-authoritative simulation staying in sync across clients.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section"><h3>Testing / Validation</h3>
+        <p>Built a suite of 95 automated tests covering server logic, race state transitions, and simulation behavior, alongside manual multi-device playtesting for input feel and network robustness.</p></section>
+
+      <section class="case-section"><h3>Results</h3>
+        <div class="stat-grid">
+          <div class="stat"><span class="stat__value">95</span><span class="stat__label">Automated tests</span></div>
+          <div class="stat"><span class="stat__value">1–4</span><span class="stat__label">Players per session (phones as controllers)</span></div>
+          <div class="stat"><span class="stat__value">60&nbsp;Hz</span><span class="stat__label">Fixed-timestep vehicle simulation</span></div>
+        </div>
+      </section>
+
+      <section class="case-section"><h3>Technologies</h3>
+        <ul class="tag-list tag-list--wrap"><li>TypeScript</li><li>JavaScript</li><li>Node.js</li><li>Socket.IO</li><li>Three.js</li><li>Numerical Simulation</li><li>Unity</li></ul></section>
+
+      <section class="case-section"><h3>What I Learned</h3>
+        <p>Server-authoritative design and deterministic/shared simulation state matter far more than they seem to at first — most of the hard bugs were about keeping multiple clients' views of the same game state consistent, not about the game logic itself.</p></section>
+    </div>
+  </dialog>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <dialog id="lightbox" class="lightbox">
+    <button class="lightbox__close" data-close-lightbox aria-label="Close image">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" data-lightbox-prev aria-label="Previous image">&#8249;</button>
+    <img class="lightbox__image" id="lightboxImage" src="" alt="" />
+    <button class="lightbox__nav lightbox__nav--next" data-lightbox-next aria-label="Next image">&#8250;</button>
+    <p class="lightbox__caption" id="lightboxCaption"></p>
+  </dialog>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
