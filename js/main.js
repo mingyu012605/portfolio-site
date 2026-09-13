@@ -1,52 +1,4 @@
 // ---------------------------------------------------------------------------
-// Theme toggle (light/dark), persisted in localStorage
-// ---------------------------------------------------------------------------
-(function () {
-  const toggle = document.getElementById('themeToggle');
-  if (!toggle) return;
-  const root = document.documentElement;
-  let stored = null;
-  try { stored = localStorage.getItem('theme'); } catch (e) {}
-
-  function apply(theme) {
-    if (theme === 'dark' || theme === 'light') {
-      root.setAttribute('data-theme', theme);
-    } else {
-      root.removeAttribute('data-theme');
-    }
-    const isDark = theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    toggle.setAttribute('aria-pressed', String(isDark));
-    toggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
-  }
-
-  apply(stored);
-
-  toggle.addEventListener('click', () => {
-    const currentlyDark = root.getAttribute('data-theme') === 'dark' ||
-      (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    const next = currentlyDark ? 'light' : 'dark';
-    apply(next);
-    try { localStorage.setItem('theme', next); } catch (e) {}
-  });
-})();
-
-// ---------------------------------------------------------------------------
-// Auto-scrolling "Technologies" tag marquees (seamless loop via cloned items)
-// ---------------------------------------------------------------------------
-(function () {
-  const lists = document.querySelectorAll('.tag-list--marquee');
-  if (!lists.length) return;
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion) return;
-
-  lists.forEach((list) => {
-    const items = Array.from(list.children);
-    items.forEach((li) => list.appendChild(li.cloneNode(true)));
-    list.classList.add('is-marquee');
-  });
-})();
-
-// ---------------------------------------------------------------------------
 // Fade images in as they finish loading
 // ---------------------------------------------------------------------------
 (function () {
@@ -287,7 +239,6 @@
   const lightbox = document.getElementById('lightbox');
   const lightboxImage = document.getElementById('lightboxImage');
   const lightboxCaption = document.getElementById('lightboxCaption');
-  const lightboxCounter = document.getElementById('lightboxCounter');
   if (!lightbox || !lightboxImage) return;
 
   let currentGroup = [];
@@ -305,15 +256,6 @@
     lightboxImage.alt = img.alt || '';
     const figcaption = img.closest('figure')?.querySelector('figcaption');
     lightboxCaption.textContent = figcaption ? figcaption.textContent : '';
-    if (lightboxCounter) {
-      if (currentGroup.length > 1) {
-        const pad = (n) => String(n).padStart(2, '0');
-        lightboxCounter.textContent = `${pad(currentIndex + 1)} / ${pad(currentGroup.length)}`;
-        lightboxCounter.hidden = false;
-      } else {
-        lightboxCounter.hidden = true;
-      }
-    }
   }
 
   function openFrom(img) {

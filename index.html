@@ -3,12 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>
-    try {
-      var t = localStorage.getItem('theme');
-      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
-    } catch (e) {}
-  </script>
   <title>Mingyu Song — Engineering Portfolio</title>
   <meta name="description" content="Engineering portfolio: visual-inertial SLAM, BIM digital twins, structural optimization, fabrication, and interactive software." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,10 +30,6 @@
         <li><a href="#about" class="nav__link">About</a></li>
         <li><a href="#contact" class="nav__link">Contact</a></li>
       </ul>
-      <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark theme" aria-pressed="false">
-        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" /><g stroke-linecap="round"><line x1="12" y1="1.5" x2="12" y2="4" /><line x1="12" y1="20" x2="12" y2="22.5" /><line x1="1.5" y1="12" x2="4" y2="12" /><line x1="20" y1="12" x2="22.5" y2="12" /><line x1="4.5" y1="4.5" x2="6.2" y2="6.2" /><line x1="17.8" y1="17.8" x2="19.5" y2="19.5" /><line x1="4.5" y1="19.5" x2="6.2" y2="17.8" /><line x1="17.8" y1="6.2" x2="19.5" y2="4.5" /></g></svg>
-        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" /></svg>
-      </button>
     </nav>
   </header>
 
@@ -97,16 +87,8 @@
       <div class="hero__inner">
         <p class="sr-only">Core tools: ROS2, C++, Python, MATLAB, OpenCV, Raspberry Pi, BIM, Three.js</p>
         <div class="hero__panel">
-          <div class="hero__intro">
-            <div class="hero__photo-wrap">
-              <img class="hero__photo" src="assets/images/profile.jpg" alt="Portrait of Mingyu Song" width="96" height="96" />
-              <span class="hero__photo-badge" aria-hidden="true"></span>
-            </div>
-            <div>
-              <p class="hero__eyebrow">Materials Engineering &middot; UBC</p>
-              <h1 class="hero__name">Mingyu Song</h1>
-            </div>
-          </div>
+          <p class="hero__eyebrow">Engineering Portfolio</p>
+          <h1 class="hero__name">Mingyu Song</h1>
           <p class="hero__headline">Engineering student building systems across sensing, simulation, computer vision, and the physical world.</p>
           <p class="hero__sub">I work on projects spanning visual-inertial SLAM, biomechanics, BIM/digital twins, structural optimization, fabrication, and interactive software.</p>
           <div class="hero__actions">
@@ -121,7 +103,6 @@
     <section id="projects" class="projects">
       <div class="section-inner">
         <div class="reveal">
-          <p class="section-eyebrow"><span class="section-eyebrow__num">01</span><span class="section-eyebrow__dash" aria-hidden="true"></span></p>
           <h2 class="section-title">Projects</h2>
           <p class="section-lede">Selected engineering work. Click a project to see the full process — problem, architecture, debugging, and validation, not just the final result.</p>
         </div>
@@ -202,7 +183,6 @@
     <!-- ================= ABOUT ================= -->
     <section id="about" class="about">
       <div class="section-inner section-inner--narrow reveal">
-        <p class="section-eyebrow"><span class="section-eyebrow__num">02</span><span class="section-eyebrow__dash" aria-hidden="true"></span></p>
         <h2 class="section-title">About</h2>
         <div class="reveal--stagger">
           <p class="about__text">I'm a Materials Engineering student at UBC interested in building systems that connect computation with the physical world. My work has ranged from visual-inertial motion tracking and IMU sensing to BIM/digital-twin tooling, topology optimization, and real-time interactive software. I especially enjoy projects where solving the problem requires moving between hardware, code, mathematical models, and experimental testing.</p>
@@ -213,27 +193,12 @@
 
     <!-- ================= CONTACT ================= -->
     <section id="contact" class="contact">
-      <div class="section-inner contact__grid reveal">
-        <div class="contact__intro">
-          <p class="section-eyebrow section-eyebrow--on-dark"><span class="section-eyebrow__num">03</span><span class="section-eyebrow__dash" aria-hidden="true"></span> Get in touch</p>
-          <h2 class="contact__title">Let's connect.</h2>
-          <p class="contact__lede">Reach out about research, collaboration, or opportunities.</p>
-        </div>
+      <div class="section-inner section-inner--narrow reveal">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-lede">Reach out about research, collaboration, or opportunities.</p>
         <ul class="contact-list">
-          <li>
-            <a href="mailto:songmingyu922@gmail.com" class="contact-list__row">
-              <span class="contact-list__label">Email</span>
-              <span class="contact-list__value">songmingyu922@gmail.com</span>
-              <span class="contact-list__arrow" aria-hidden="true">↗</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/mingyu012605/mingyu" target="_blank" rel="noopener" class="contact-list__row">
-              <span class="contact-list__label">GitHub</span>
-              <span class="contact-list__value">github.com/mingyu012605/mingyu</span>
-              <span class="contact-list__arrow" aria-hidden="true">↗</span>
-            </a>
-          </li>
+          <li><span class="contact-list__label">Email</span><a href="mailto:songmingyu922@gmail.com" class="contact-list__value">songmingyu922@gmail.com</a></li>
+          <li><span class="contact-list__label">GitHub</span><a href="https://github.com/mingyu012605/mingyu" target="_blank" rel="noopener" class="contact-list__value">github.com/mingyu012605/mingyu</a></li>
         </ul>
       </div>
     </section>
@@ -519,14 +484,12 @@
 
       <section class="case-section">
         <h3>Technologies</h3>
-        <div class="tag-marquee">
-          <ul class="tag-list tag-list--wrap tag-list--marquee">
-            <li>C++</li><li>Python</li><li>Linux</li><li>WSL</li><li>Raspberry Pi</li><li>Red Pitaya</li><li>ROS2</li>
-            <li>ORB-SLAM3 (integrated)</li><li>OpenCV (integrated)</li><li>OpenSim (integrated)</li><li>Fisheye / Kannala-Brandt camera model</li>
-            <li>IMU sensor fusion concepts</li><li>xioTechnologies Fusion library (investigated/referenced)</li>
-            <li>TUM RGB-D / EuRoC benchmarks</li><li>TCP streaming</li><li>Networking / port-forwarding debugging</li><li>Data visualization</li>
-          </ul>
-        </div>
+        <ul class="tag-list tag-list--wrap">
+          <li>C++</li><li>Python</li><li>Linux</li><li>WSL</li><li>Raspberry Pi</li><li>Red Pitaya</li><li>ROS2</li>
+          <li>ORB-SLAM3 (integrated)</li><li>OpenCV (integrated)</li><li>OpenSim (integrated)</li><li>Fisheye / Kannala-Brandt camera model</li>
+          <li>IMU sensor fusion concepts</li><li>xioTechnologies Fusion library (investigated/referenced)</li>
+          <li>TUM RGB-D / EuRoC benchmarks</li><li>TCP streaming</li><li>Networking / port-forwarding debugging</li><li>Data visualization</li>
+        </ul>
       </section>
 
       <section class="case-section">
@@ -602,7 +565,7 @@
       </section>
 
       <section class="case-section"><h3>Technologies</h3>
-        <div class="tag-marquee"><ul class="tag-list tag-list--wrap tag-list--marquee"><li>Three.js</li><li>JavaScript</li><li>Node.js</li><li>STL / GLTF / GLB / IFC</li><li>OpenAI API integration</li><li>Git/GitHub</li><li>Netlify</li></ul></div></section>
+        <ul class="tag-list tag-list--wrap"><li>Three.js</li><li>JavaScript</li><li>Node.js</li><li>STL / GLTF / GLB / IFC</li><li>OpenAI API integration</li><li>Git/GitHub</li><li>Netlify</li></ul></section>
 
       <section class="case-section"><h3>What I Learned</h3>
         <p>Voice/chat input is far more reliable when it's constrained to a well-defined set of operations than when it tries to accept open-ended natural-language editing — mapping AI commands onto the exact same functions the UI buttons call (rather than a separate code path) is what kept undo/redo trustworthy. I also learned how much a project's scope can grow once you find the right frame for it — a small STL editor became a genuinely useful BIM coordination tool once IFC support and data layers were added.</p></section>
@@ -746,7 +709,7 @@
       </section>
 
       <section class="case-section"><h3>Technologies</h3>
-        <div class="tag-marquee"><ul class="tag-list tag-list--wrap tag-list--marquee"><li>MATLAB</li><li>SIMP</li><li>MMA optimizer</li><li>Level-Set (researched)</li><li>BESO (researched)</li><li>Finite-element analysis</li><li>Structural mechanics</li></ul></div></section>
+        <ul class="tag-list tag-list--wrap"><li>MATLAB</li><li>SIMP</li><li>MMA optimizer</li><li>Level-Set (researched)</li><li>BESO (researched)</li><li>Finite-element analysis</li><li>Structural mechanics</li></ul></section>
 
       <section class="case-section"><h3>What I Learned</h3>
         <p>Manufacturing constraints aren't restrictions on an otherwise-perfect answer — they're part of the actual engineering problem. A mathematically lower-compliance design with paper-thin, checkerboarded members is useless if it can't be built, inspected, or trusted not to fail; the job isn't to find the mathematically perfect solution, it's to find the best solution that can actually be built, maintained, and operated in the real world. Running the same problem across a range of filter radii, rather than accepting the first converged result, is what made that tradeoff visible instead of implicit.</p></section>
@@ -823,7 +786,7 @@ desktop/laptop game display</pre>
       </section>
 
       <section class="case-section"><h3>Technologies</h3>
-        <div class="tag-marquee"><ul class="tag-list tag-list--wrap tag-list--marquee"><li>TypeScript</li><li>JavaScript</li><li>Node.js</li><li>Socket.IO</li><li>Three.js</li><li>Numerical Simulation</li><li>Unity</li></ul></div></section>
+        <ul class="tag-list tag-list--wrap"><li>TypeScript</li><li>JavaScript</li><li>Node.js</li><li>Socket.IO</li><li>Three.js</li><li>Numerical Simulation</li><li>Unity</li></ul></section>
 
       <section class="case-section"><h3>What I Learned</h3>
         <p>Server-authoritative design and deterministic/shared simulation state matter far more than they seem to at first — most of the hard bugs were about keeping multiple clients' views of the same game state consistent, not about the game logic itself.</p></section>
@@ -837,7 +800,6 @@ desktop/laptop game display</pre>
     <img class="lightbox__image" id="lightboxImage" src="" alt="" />
     <button class="lightbox__nav lightbox__nav--next" data-lightbox-next aria-label="Next image">&#8250;</button>
     <p class="lightbox__caption" id="lightboxCaption"></p>
-    <p class="lightbox__counter" id="lightboxCounter"></p>
   </dialog>
 
   <script src="js/main.js"></script>
