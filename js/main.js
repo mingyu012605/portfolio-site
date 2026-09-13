@@ -22,28 +22,6 @@
 })();
 
 // ---------------------------------------------------------------------------
-// Hero network graph: subtle parallax that follows the cursor
-// (the graph's own gentle idle drift is a pure CSS animation; this handles
-// only the cursor-follow layer, on a separate nested <g> so the two don't fight)
-// ---------------------------------------------------------------------------
-(function () {
-  const hero = document.querySelector('.hero');
-  const inner = document.querySelector('.hero__graph-inner');
-  if (!hero || !inner) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  hero.addEventListener('mousemove', (e) => {
-    const rect = hero.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    inner.style.transform = `translate(${x * 28}px, ${y * 20}px) scale(1.02)`;
-  });
-  hero.addEventListener('mouseleave', () => {
-    inner.style.transform = '';
-  });
-})();
-
-// ---------------------------------------------------------------------------
 // Hero network graph: nodes grow as the cursor approaches them
 // ---------------------------------------------------------------------------
 (function () {
