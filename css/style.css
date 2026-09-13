@@ -364,14 +364,14 @@ main > section {
 
 .hero__intro {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1.75rem;
   margin-bottom: 1.1rem;
 }
-.hero__photo-wrap { position: relative; flex-shrink: 0; }
+.hero__photo-wrap { position: relative; flex-shrink: 0; margin-top: -0.75rem; }
 .hero__photo {
-  width: clamp(110px, 12vw, 168px);
-  height: clamp(110px, 12vw, 168px);
+  width: clamp(120px, 13vw, 190px);
+  height: clamp(120px, 13vw, 190px);
   border-radius: 50%;
   object-fit: cover;
   display: block;
