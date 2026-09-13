@@ -297,6 +297,7 @@ main > section {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
+  pointer-events: none;
 }
 
 /* Network-graph centerpiece */
@@ -376,6 +377,9 @@ main > section {
   position: relative;
   max-width: 560px;
   animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+.hero__actions a {
+  pointer-events: auto;
 }
 
 .hero__intro {
