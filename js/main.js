@@ -124,30 +124,69 @@
 })();
 
 // ---------------------------------------------------------------------------
-// Reveal project cards as a staggered cascade once the grid scrolls into view
+// Project carousel: centers the current slide, peeks neighbors, syncs the
+// counter and detail panel; clicking the current slide (or "View project")
+// opens the matching case-study dialog.
 // ---------------------------------------------------------------------------
 (function () {
-  const grid = document.querySelector('.project-grid');
-  if (!grid) return;
+  const root = document.querySelector('[data-carousel]');
+  if (!root) return;
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion) {
-    grid.classList.add('is-visible');
-    return;
+  const viewport = root.querySelector('.project-carousel__viewport');
+  const track = root.querySelector('[data-carousel-track]');
+  const slides = Array.from(root.querySelectorAll('[data-carousel-slide]'));
+  const prevBtn = root.querySelector('[data-carousel-prev]');
+  const nextBtn = root.querySelector('[data-carousel-next]');
+  const currentEl = root.querySelector('[data-carousel-current]');
+  const totalEl = root.querySelector('[data-carousel-total]');
+  const panels = Array.from(root.querySelectorAll('[data-carousel-panel]'));
+  if (!viewport || !track || !slides.length) return;
+
+  let index = 0;
+  totalEl.textContent = String(slides.length).padStart(2, '0');
+
+  function openDialogFor(id) {
+    const dialog = document.getElementById(id);
+    if (dialog && typeof window.__openCaseDialog === 'function') window.__openCaseDialog(dialog);
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          grid.classList.add('is-visible');
-          observer.unobserve(grid);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-  observer.observe(grid);
+  function render() {
+    const slide = slides[index];
+    const offset = (viewport.clientWidth - slide.offsetWidth) / 2 - slide.offsetLeft;
+    track.style.transform = `translateX(${offset}px)`;
+    slides.forEach((s, i) => s.classList.toggle('is-current', i === index));
+    panels.forEach((p, i) => { p.hidden = i !== index; });
+    currentEl.textContent = String(index + 1).padStart(2, '0');
+  }
+
+  function goTo(i) {
+    index = (i + slides.length) % slides.length;
+    render();
+  }
+
+  prevBtn?.addEventListener('click', () => goTo(index - 1));
+  nextBtn?.addEventListener('click', () => goTo(index + 1));
+
+  slides.forEach((slide, i) => {
+    slide.addEventListener('click', () => {
+      if (i === index) openDialogFor(slide.dataset.dialog);
+      else goTo(i);
+    });
+    slide.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (i === index) openDialogFor(slide.dataset.dialog);
+        else goTo(i);
+      }
+    });
+  });
+
+  root.querySelectorAll('[data-carousel-view]').forEach((btn) => {
+    btn.addEventListener('click', () => openDialogFor(btn.dataset.dialog));
+  });
+
+  window.addEventListener('resize', render);
+  render();
 })();
 
 // ---------------------------------------------------------------------------
@@ -222,6 +261,8 @@
     if (!dialog) return;
     dialog.close();
   }
+
+  window.__openCaseDialog = openDialog;
 
   cards.forEach((card) => {
     const dialog = document.getElementById(card.dataset.dialog);

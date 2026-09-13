@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" />
   <link rel="stylesheet" href="css/style.css" />
-  <noscript><style>.project-card, .case-section, .reveal, .reveal--stagger > *, img.fade-img { opacity: 1 !important; transform: none !important; } .section-title::after { transform: scaleX(1) !important; }</style></noscript>
+  <noscript><style>.project-carousel__slide, .case-section, .reveal, .reveal--stagger > *, img.fade-img { opacity: 1 !important; transform: none !important; } .section-title::after { transform: scaleX(1) !important; }</style></noscript>
 </head>
 <body>
 
@@ -117,75 +117,87 @@
           <p class="section-lede">Engineering work I've been building. Click a project to see the full process — problem, architecture, debugging, and validation, not just the final result.</p>
         </div>
 
-        <div class="project-grid">
+        <div class="project-carousel" data-carousel>
+          <div class="project-carousel__viewport">
+            <button class="project-carousel__nav project-carousel__nav--prev" data-carousel-prev aria-label="Previous project">‹</button>
+            <div class="project-carousel__track" data-carousel-track>
 
-          <!-- Card 1: SLAM -->
-          <article class="project-card project-card--featured" data-dialog="dialog-slam" tabindex="0" role="button" aria-haspopup="dialog">
-            <figure class="media project-card__media" data-expected="assets/images/slam/slam-live-demo-collage.png">
-              <span class="project-card__badge">Featured Research</span>
-              <img src="assets/images/slam/slam-live-demo-collage.png" alt="Live SLAM system demo: Pangolin trajectory viewer, ORB-SLAM3 map viewer and tracked frame, ROS2 terminal logs, and the camera/IMU rig" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
-              <div class="project-card__overlay"><span>View case study →</span></div>
-            </figure>
-            <div class="project-card__body">
-              <h3 class="project-card__title">Sensorimotor Physiology Research</h3>
-              <p class="project-card__desc">UBC research internship building a real-time sensing and Visual-Inertial SLAM pipeline — Raspberry Pi camera, 208&nbsp;Hz IMU, ORB-SLAM3, fisheye calibration, and physical movement validation.</p>
+              <article class="project-carousel__slide" data-dialog="dialog-slam" data-carousel-slide tabindex="0" role="button" aria-haspopup="dialog">
+                <img src="assets/images/slam/slam-live-demo-collage.png" alt="Live SLAM system demo: Pangolin trajectory viewer, ORB-SLAM3 map viewer and tracked frame, ROS2 terminal logs, and the camera/IMU rig" loading="lazy" />
+                <span class="project-carousel__slide-badge">Featured Research</span>
+                <span class="project-carousel__slide-tag">SLAM &middot; Computer Vision</span>
+              </article>
+
+              <article class="project-carousel__slide" data-dialog="dialog-formalink" data-carousel-slide tabindex="0" role="button" aria-haspopup="dialog">
+                <img src="assets/images/formalink/ifc-model-loaded.png" alt="IFC building model loaded in the FormaLink 3D workspace" loading="lazy" />
+                <span class="project-carousel__slide-badge">Featured Research</span>
+                <span class="project-carousel__slide-tag">BIM &middot; 3D Workspace</span>
+              </article>
+
+              <article class="project-carousel__slide" data-dialog="dialog-pocket-arena" data-carousel-slide tabindex="0" role="button" aria-haspopup="dialog">
+                <img src="assets/images/pocket-arena/racing.png" alt="Pocket Arena multiplayer racing game screen" loading="lazy" />
+                <span class="project-carousel__slide-badge project-carousel__slide-badge--status">In Progress</span>
+                <span class="project-carousel__slide-tag">Multiplayer Game</span>
+              </article>
+
+              <article class="project-carousel__slide" data-dialog="dialog-topology" data-carousel-slide tabindex="0" role="button" aria-haspopup="dialog">
+                <img src="assets/images/topology/ref-impeller-modal-response.webp" alt="Reference finite-element stress/modal analysis of a topology-optimized impeller, illustrating the class of structural-optimization problems this project builds on" loading="lazy" />
+                <span class="project-carousel__slide-badge project-carousel__slide-badge--status">In Progress</span>
+                <span class="project-carousel__slide-tag">Structural Optimization</span>
+              </article>
+
+            </div>
+            <button class="project-carousel__nav project-carousel__nav--next" data-carousel-next aria-label="Next project">›</button>
+          </div>
+
+          <p class="project-carousel__counter"><span data-carousel-current>01</span> / <span data-carousel-total>04</span></p>
+
+          <div class="project-carousel__detail" data-carousel-detail>
+
+            <div class="project-carousel__detail-panel" data-carousel-panel>
+              <p class="project-carousel__detail-meta">Featured Research</p>
+              <h3 class="project-carousel__detail-title">Sensorimotor Physiology Research</h3>
+              <p class="project-carousel__detail-desc">UBC research internship building a real-time sensing and Visual-Inertial SLAM pipeline — Raspberry Pi camera, 208&nbsp;Hz IMU, ORB-SLAM3, fisheye calibration, and physical movement validation.</p>
               <ul class="tag-list">
                 <li>ROS2</li><li>C++</li><li>Python</li><li>OpenCV</li><li>ORB-SLAM3</li><li>Raspberry Pi</li>
               </ul>
-              <p class="project-card__metric">2.5 cm ATE RMSE on the TUM RGB-D benchmark</p>
+              <p class="project-carousel__detail-metric">2.5 cm ATE RMSE on the TUM RGB-D benchmark</p>
+              <button class="link-cta" data-dialog="dialog-slam" data-carousel-view>View project <span class="link-cta__arrow" aria-hidden="true">↗</span></button>
             </div>
-          </article>
 
-          <!-- Card 2: FormaLink -->
-          <article class="project-card project-card--featured" data-dialog="dialog-formalink" tabindex="0" role="button" aria-haspopup="dialog">
-            <figure class="media project-card__media" data-expected="assets/images/formalink/ifc-model-loaded.png">
-              <span class="project-card__badge">Featured Research</span>
-              <img src="assets/images/formalink/ifc-model-loaded.png" alt="IFC building model loaded in the FormaLink 3D workspace" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
-              <div class="project-card__overlay"><span>View case study →</span></div>
-            </figure>
-            <div class="project-card__body">
-              <h3 class="project-card__title">FormaLink — BIM &amp; 3D Workspace</h3>
-              <p class="project-card__desc">A browser-based IFC/BIM and 3D model workspace with object inspection, measurement, boolean tools, digital-twin data layers, and an AI assistant — grown from an earlier voice-controlled STL/CAD editor.</p>
+            <div class="project-carousel__detail-panel" data-carousel-panel hidden>
+              <p class="project-carousel__detail-meta">Featured Research</p>
+              <h3 class="project-carousel__detail-title">FormaLink — BIM &amp; 3D Workspace</h3>
+              <p class="project-carousel__detail-desc">A browser-based IFC/BIM and 3D model workspace with object inspection, measurement, boolean tools, digital-twin data layers, and an AI assistant — grown from an earlier voice-controlled STL/CAD editor.</p>
               <ul class="tag-list">
                 <li>Three.js</li><li>JavaScript</li><li>IFC/BIM</li><li>Digital Twin</li><li>AI Assistant</li>
               </ul>
-              <p class="project-card__metric"><a href="https://formalink-app.netlify.app/" target="_blank" rel="noopener">Live demo ↗</a></p>
+              <p class="project-carousel__detail-metric"><a href="https://formalink-app.netlify.app/" target="_blank" rel="noopener">Live demo ↗</a></p>
+              <button class="link-cta" data-dialog="dialog-formalink" data-carousel-view>View project <span class="link-cta__arrow" aria-hidden="true">↗</span></button>
             </div>
-          </article>
 
-          <!-- Card 3: Pocket Arena -->
-          <article class="project-card" data-dialog="dialog-pocket-arena" tabindex="0" role="button" aria-haspopup="dialog">
-            <figure class="media project-card__media" data-expected="assets/images/pocket-arena/racing.png">
-              <span class="project-card__badge project-card__badge--status">In Progress</span>
-              <img src="assets/images/pocket-arena/racing.png" alt="Pocket Arena multiplayer racing game screen" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
-              <div class="project-card__overlay"><span>View case study →</span></div>
-            </figure>
-            <div class="project-card__body">
-              <h3 class="project-card__title">Pocket Arena — Multiplayer Game Platform</h3>
-              <p class="project-card__desc">A shared-screen multiplayer platform where phones become controllers over WebSockets — built a server-authoritative racing game with lobby, ranking, and rematch flow.</p>
+            <div class="project-carousel__detail-panel" data-carousel-panel hidden>
+              <p class="project-carousel__detail-meta">In Progress</p>
+              <h3 class="project-carousel__detail-title">Pocket Arena — Multiplayer Game Platform</h3>
+              <p class="project-carousel__detail-desc">A shared-screen multiplayer platform where phones become controllers over WebSockets — built a server-authoritative racing game with lobby, ranking, and rematch flow.</p>
               <ul class="tag-list">
                 <li>TypeScript</li><li>Node.js</li><li>Socket.IO</li><li>Three.js</li><li>Numerical Simulation</li>
               </ul>
-              <p class="project-card__metric">95 automated tests &middot; <a href="https://pocket-arena.onrender.com" target="_blank" rel="noopener">Live demo ↗</a></p>
+              <p class="project-carousel__detail-metric">95 automated tests &middot; <a href="https://pocket-arena.onrender.com" target="_blank" rel="noopener">Live demo ↗</a></p>
+              <button class="link-cta" data-dialog="dialog-pocket-arena" data-carousel-view>View project <span class="link-cta__arrow" aria-hidden="true">↗</span></button>
             </div>
-          </article>
 
-          <!-- Card 4: Topology -->
-          <article class="project-card" data-dialog="dialog-topology" tabindex="0" role="button" aria-haspopup="dialog">
-            <figure class="media project-card__media" data-expected="assets/images/topology/ref-impeller-modal-response.webp">
-              <span class="project-card__badge project-card__badge--status">In Progress</span>
-              <img src="assets/images/topology/ref-impeller-modal-response.webp" alt="Reference finite-element stress/modal analysis of a topology-optimized impeller, illustrating the class of structural-optimization problems this project builds on" loading="lazy" onerror="this.parentElement.classList.add('media--missing')" />
-              <div class="project-card__overlay"><span>View case study →</span></div>
-            </figure>
-            <div class="project-card__body">
-              <h3 class="project-card__title">Marine Topology Optimization</h3>
-              <p class="project-card__desc">Adapted a MATLAB SIMP topology-optimization framework for a tugboat thruster foundation under multiple thruster loads and hydrostatic pressure.</p>
+            <div class="project-carousel__detail-panel" data-carousel-panel hidden>
+              <p class="project-carousel__detail-meta">In Progress</p>
+              <h3 class="project-carousel__detail-title">Marine Topology Optimization</h3>
+              <p class="project-carousel__detail-desc">Adapted a MATLAB SIMP topology-optimization framework for a tugboat thruster foundation under multiple thruster loads and hydrostatic pressure.</p>
               <ul class="tag-list">
                 <li>MATLAB</li><li>SIMP</li><li>Optimization</li><li>Structural Engineering</li>
               </ul>
+              <button class="link-cta" data-dialog="dialog-topology" data-carousel-view>View project <span class="link-cta__arrow" aria-hidden="true">↗</span></button>
             </div>
-          </article>
 
+          </div>
         </div>
       </div>
     </section>
