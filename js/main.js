@@ -1,4 +1,27 @@
 // ---------------------------------------------------------------------------
+// Skills marquee: seamless loop via cloned items, with a pause/play toggle
+// ---------------------------------------------------------------------------
+(function () {
+  const list = document.getElementById('skillsMarquee');
+  const toggle = document.getElementById('skillsToggle');
+  if (!list) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion) {
+    Array.from(list.children).forEach((li) => list.appendChild(li.cloneNode(true)));
+    list.classList.add('is-marquee');
+  }
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const isPaused = list.classList.toggle('is-paused');
+      toggle.setAttribute('aria-pressed', String(isPaused));
+      toggle.setAttribute('aria-label', isPaused ? 'Resume scrolling' : 'Pause scrolling');
+    });
+  }
+})();
+
+// ---------------------------------------------------------------------------
 // Fade images in as they finish loading
 // ---------------------------------------------------------------------------
 (function () {
