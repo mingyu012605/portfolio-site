@@ -17,6 +17,9 @@
   --accent-2: #e0a52e;
   --accent-2-strong: #b98220;
   --accent-2-soft: #fbeed0;
+  --accent-3: #2f8f6e;
+  --accent-3-strong: #21694f;
+  --accent-3-soft: #e2f3ec;
   --danger: #a33;
   --status-progress-bg: #f4e2b8;
   --status-progress-fg: #7a5a12;
@@ -275,8 +278,8 @@ main > section {
   overflow: hidden;
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  padding: 6rem 1.5rem 4rem;
+  align-items: flex-start;
+  padding: 9rem 1.5rem 4rem;
   border-bottom: 1px solid var(--border);
   box-sizing: border-box;
   background: var(--bg);
@@ -305,6 +308,8 @@ main > section {
   z-index: 0;
   overflow: visible;
   opacity: 0.55;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 .hero__edge {
   stroke: var(--accent);
@@ -639,10 +644,15 @@ main > section {
 .tag-list--marquee.is-marquee.is-paused { animation-play-state: paused; }
 .tag-list--marquee li { white-space: nowrap; }
 .skills .tag-list--marquee li {
-  font-size: 0.9rem;
-  padding: 0.5rem 1.1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 0.85rem 1.6rem;
   background: var(--surface);
+  border-width: 1.5px;
 }
+.skills .tag-list--marquee li.tag--robotics { color: var(--accent-strong); border-color: var(--accent); background: var(--accent-soft); }
+.skills .tag-list--marquee li.tag--engineering { color: var(--accent-2-strong); border-color: var(--accent-2); background: var(--accent-2-soft); }
+.skills .tag-list--marquee li.tag--software { color: var(--accent-3-strong); border-color: var(--accent-3); background: var(--accent-3-soft); }
 @keyframes tag-marquee-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }

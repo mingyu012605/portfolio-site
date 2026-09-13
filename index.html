@@ -26,8 +26,8 @@
       </button>
       <ul class="nav__list" id="navList">
         <li><a href="#home" class="nav__link">Home</a></li>
-        <li><a href="#projects" class="nav__link">Projects</a></li>
         <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
         <li><a href="#experience" class="nav__link">Experience</a></li>
         <li><a href="#blog" class="nav__link">Blog</a></li>
         <li><a href="#technologies" class="nav__link">Technologies</a></li>
@@ -111,11 +111,23 @@
       </div>
     </section>
 
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="about">
+      <div class="section-inner section-inner--narrow reveal">
+        <p class="section-eyebrow"><span class="section-eyebrow__num">01</span><span class="section-eyebrow__dash" aria-hidden="true"></span></p>
+        <h2 class="section-title">About</h2>
+        <div class="reveal--stagger">
+          <p class="about__text">I'm a Materials Engineering student at UBC interested in building systems that connect computation with the physical world. My work has ranged from visual-inertial motion tracking and IMU sensing to BIM/digital-twin tooling, topology optimization, and real-time interactive software. I especially enjoy projects where solving the problem requires moving between hardware, code, mathematical models, and experimental testing.</p>
+          <p class="about__text">My experience crosses biomechanics, computer vision, sensing, robotics-style systems, structural engineering, BIM, numerical optimization, and interactive software — I don't focus on one discipline because my projects intentionally span several.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= PROJECTS ================= -->
     <section id="projects" class="projects">
       <div class="section-inner">
         <div class="reveal">
-          <p class="section-eyebrow"><span class="section-eyebrow__num">01</span><span class="section-eyebrow__dash" aria-hidden="true"></span></p>
+          <p class="section-eyebrow"><span class="section-eyebrow__num">02</span><span class="section-eyebrow__dash" aria-hidden="true"></span></p>
           <h2 class="section-title">Projects</h2>
           <p class="section-lede">Selected engineering work. Click a project to see the full process — problem, architecture, debugging, and validation, not just the final result.</p>
         </div>
@@ -205,26 +217,14 @@
       </div>
     </section>
 
-    <!-- ================= ABOUT ================= -->
-    <section id="about" class="about">
-      <div class="section-inner section-inner--narrow reveal">
-        <p class="section-eyebrow"><span class="section-eyebrow__num">02</span><span class="section-eyebrow__dash" aria-hidden="true"></span></p>
-        <h2 class="section-title">About</h2>
-        <div class="reveal--stagger">
-          <p class="about__text">I'm a Materials Engineering student at UBC interested in building systems that connect computation with the physical world. My work has ranged from visual-inertial motion tracking and IMU sensing to BIM/digital-twin tooling, topology optimization, and real-time interactive software. I especially enjoy projects where solving the problem requires moving between hardware, code, mathematical models, and experimental testing.</p>
-          <p class="about__text">My experience crosses biomechanics, computer vision, sensing, robotics-style systems, structural engineering, BIM, numerical optimization, and interactive software — I don't focus on one discipline because my projects intentionally span several.</p>
-        </div>
-      </div>
-    </section>
-
     <!-- ================= EXPERIENCE ================= -->
     <section id="experience" class="experience">
       <div class="section-inner section-inner--narrow reveal">
         <p class="section-eyebrow"><span class="section-eyebrow__num">03</span><span class="section-eyebrow__dash" aria-hidden="true"></span></p>
         <h2 class="section-title">Experience</h2>
         <ul class="timeline">
-          <li class="timeline-item timeline-item--current">
-            <p class="timeline-item__date">Jan&ndash;Aug 2026 &middot; Current</p>
+          <li class="timeline-item">
+            <p class="timeline-item__date">Jan&ndash;Aug 2026 &middot; Done</p>
             <h3 class="timeline-item__role">Sensorimotor Physiology Research Intern</h3>
             <p class="timeline-item__org">UBC School of Kinesiology</p>
             <p class="timeline-item__desc">Building a real-time sensing and Visual-Inertial SLAM pipeline &mdash; Raspberry Pi camera, IMU sensing, ORB-SLAM3, and physical movement validation &mdash; supervised by Dr. Jean-S&eacute;bastien Blouin and Dr. Jesse Charlton.</p>
@@ -232,10 +232,10 @@
           <li class="timeline-item">
             <p class="timeline-item__date">Summer 2026</p>
             <h3 class="timeline-item__role">Structural Optimization Research Assistant</h3>
-            <p class="timeline-item__org">UBC Laboratory for Structural Efficiency (LASE)</p>
-            <p class="timeline-item__desc">Adapting a MATLAB SIMP topology-optimization framework for a marine thruster foundation, under Dr. Jasmin Jelovica.</p>
+            <p class="timeline-item__org">UBC Civil Engineering &mdash; Laboratory for Structural Efficiency (LASE)</p>
+            <p class="timeline-item__desc">Civil engineering research on structural efficiency and BIM-integrated design workflows, adapting a MATLAB SIMP topology-optimization framework for a marine thruster foundation, under Dr. Jasmin Jelovica.</p>
           </li>
-          <li class="timeline-item">
+          <li class="timeline-item timeline-item--current">
             <p class="timeline-item__date">2023 &ndash; Current</p>
             <h3 class="timeline-item__role">Materials Engineering</h3>
             <p class="timeline-item__org">University of British Columbia</p>
@@ -270,10 +270,13 @@
       </div>
       <div class="tag-marquee">
         <ul class="tag-list tag-list--marquee" id="skillsMarquee">
-          <li>C++</li><li>Python</li><li>MATLAB</li><li>TypeScript</li><li>JavaScript</li><li>Node.js</li>
-          <li>ROS2</li><li>OpenCV</li><li>Three.js</li><li>Topology Optimization (SIMP)</li>
-          <li>Finite-Element Analysis</li><li>IFC / BIM</li><li>Socket.IO</li><li>Raspberry Pi</li>
-          <li>Structural Mechanics</li><li>Numerical Simulation</li><li>Unity</li><li>Git / GitHub</li>
+          <li class="tag--robotics">C++</li><li class="tag--robotics">Python</li><li class="tag--engineering">MATLAB</li>
+          <li class="tag--software">TypeScript</li><li class="tag--software">JavaScript</li><li class="tag--software">Node.js</li>
+          <li class="tag--robotics">ROS2</li><li class="tag--robotics">OpenCV</li><li class="tag--software">Three.js</li>
+          <li class="tag--engineering">Topology Optimization (SIMP)</li><li class="tag--engineering">Finite-Element Analysis</li>
+          <li class="tag--software">IFC / BIM</li><li class="tag--software">Socket.IO</li><li class="tag--robotics">Raspberry Pi</li>
+          <li class="tag--engineering">Structural Mechanics</li><li class="tag--engineering">Numerical Simulation</li>
+          <li class="tag--software">Unity</li><li class="tag--software">Git / GitHub</li>
         </ul>
       </div>
     </section>

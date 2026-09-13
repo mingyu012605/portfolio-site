@@ -22,6 +22,26 @@
 })();
 
 // ---------------------------------------------------------------------------
+// Hero network graph: subtle parallax that follows the cursor
+// ---------------------------------------------------------------------------
+(function () {
+  const hero = document.querySelector('.hero');
+  const graph = document.querySelector('.hero__graph');
+  if (!hero || !graph) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    graph.style.transform = `translate(${x * 28}px, ${y * 20}px) scale(1.02)`;
+  });
+  hero.addEventListener('mouseleave', () => {
+    graph.style.transform = '';
+  });
+})();
+
+// ---------------------------------------------------------------------------
 // Fade images in as they finish loading
 // ---------------------------------------------------------------------------
 (function () {
