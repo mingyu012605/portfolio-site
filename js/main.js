@@ -51,18 +51,38 @@
   if (!graph) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const nodes = Array.from(graph.querySelectorAll('.hero__node')).map((circle) => ({
-    circle,
-    label: circle.nextElementSibling && circle.nextElementSibling.classList.contains('hero__node-label')
-      ? circle.nextElementSibling
-      : null,
-    cx: parseFloat(circle.getAttribute('cx')),
-    cy: parseFloat(circle.getAttribute('cy')),
-    color: circle.classList.contains('hero__node--warm') ? 'var(--accent-2)' : 'var(--accent)',
-  }));
+  const edges = Array.from(graph.querySelectorAll('.hero__graph-edges .hero__edge'));
+
+  const nodes = Array.from(graph.querySelectorAll('.hero__node')).map((circle) => {
+    const cx = parseFloat(circle.getAttribute('cx'));
+    const cy = parseFloat(circle.getAttribute('cy'));
+    const edge = edges.find(
+      (line) => parseFloat(line.getAttribute('x2')) === cx && parseFloat(line.getAttribute('y2')) === cy
+    );
+    return {
+      circle,
+      label: circle.nextElementSibling && circle.nextElementSibling.classList.contains('hero__node-label')
+        ? circle.nextElementSibling
+        : null,
+      cx,
+      cy,
+      color: circle.classList.contains('hero__node--warm') ? 'var(--accent-2)' : 'var(--accent)',
+      edge,
+    };
+  });
 
   const RADIUS = 210;
   const point = graph.createSVGPoint();
+
+  function reset({ circle, label, edge }) {
+    circle.style.transform = '';
+    circle.style.filter = '';
+    if (label) label.style.transform = '';
+    if (edge) {
+      edge.style.strokeWidth = '';
+      edge.style.filter = '';
+    }
+  }
 
   graph.addEventListener('mousemove', (e) => {
     const ctm = graph.getScreenCTM();
@@ -71,7 +91,8 @@
     point.y = e.clientY;
     const svgPoint = point.matrixTransform(ctm.inverse());
 
-    nodes.forEach(({ circle, label, cx, cy, color }) => {
+    nodes.forEach((node) => {
+      const { circle, label, cx, cy, color, edge } = node;
       const dist = Math.hypot(svgPoint.x - cx, svgPoint.y - cy);
       const t = Math.max(0, 1 - dist / RADIUS);
       const eased = t * t;
@@ -79,20 +100,18 @@
         circle.style.transform = `scale(${(1 + eased * 1.8).toFixed(2)})`;
         circle.style.filter = `drop-shadow(0 0 ${(eased * 8).toFixed(1)}px ${color})`;
         if (label) label.style.transform = `scale(${(1 + eased * 0.4).toFixed(2)})`;
+        if (edge) {
+          edge.style.strokeWidth = (1.5 + eased * 3).toFixed(2);
+          edge.style.filter = `drop-shadow(0 0 ${(eased * 5).toFixed(1)}px ${color})`;
+        }
       } else {
-        circle.style.transform = '';
-        circle.style.filter = '';
-        if (label) label.style.transform = '';
+        reset(node);
       }
     });
   });
 
   graph.addEventListener('mouseleave', () => {
-    nodes.forEach(({ circle, label }) => {
-      circle.style.transform = '';
-      circle.style.filter = '';
-      if (label) label.style.transform = '';
-    });
+    nodes.forEach(reset);
   });
 })();
 
