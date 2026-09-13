@@ -365,28 +365,28 @@ main > section {
 .hero__intro {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.75rem;
   margin-bottom: 1.1rem;
 }
 .hero__photo-wrap { position: relative; flex-shrink: 0; }
 .hero__photo {
-  width: 110px;
-  height: 110px;
+  width: clamp(110px, 12vw, 168px);
+  height: clamp(110px, 12vw, 168px);
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  border: 3px solid var(--accent);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--bg) 92%, transparent), var(--shadow-md);
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--bg) 92%, transparent), var(--shadow-md);
 }
 .hero__photo-badge {
   position: absolute;
-  bottom: 3px;
-  right: 3px;
-  width: 22px;
-  height: 22px;
+  bottom: 4px;
+  right: 4px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: var(--accent-2);
-  border: 3px solid var(--bg);
+  border: 4px solid var(--bg);
 }
 
 .hero__eyebrow {
