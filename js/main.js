@@ -23,21 +23,23 @@
 
 // ---------------------------------------------------------------------------
 // Hero network graph: subtle parallax that follows the cursor
+// (the graph's own gentle idle drift is a pure CSS animation; this handles
+// only the cursor-follow layer, on a separate nested <g> so the two don't fight)
 // ---------------------------------------------------------------------------
 (function () {
   const hero = document.querySelector('.hero');
-  const graph = document.querySelector('.hero__graph');
-  if (!hero || !graph) return;
+  const inner = document.querySelector('.hero__graph-inner');
+  if (!hero || !inner) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   hero.addEventListener('mousemove', (e) => {
     const rect = hero.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
-    graph.style.transform = `translate(${x * 28}px, ${y * 20}px) scale(1.02)`;
+    inner.style.transform = `translate(${x * 28}px, ${y * 20}px) scale(1.02)`;
   });
   hero.addEventListener('mouseleave', () => {
-    graph.style.transform = '';
+    inner.style.transform = '';
   });
 })();
 
@@ -59,14 +61,7 @@
     color: circle.classList.contains('hero__node--warm') ? 'var(--accent-2)' : 'var(--accent)',
   }));
 
-  // The pop-in entrance animation holds its final transform forever (fill: both),
-  // which would otherwise override any transform set from here.
-  nodes.forEach(({ circle, label }) => {
-    circle.addEventListener('animationend', () => { circle.style.animation = 'none'; }, { once: true });
-    if (label) label.addEventListener('animationend', () => { label.style.animation = 'none'; }, { once: true });
-  });
-
-  const RADIUS = 190;
+  const RADIUS = 210;
   const point = graph.createSVGPoint();
 
   graph.addEventListener('mousemove', (e) => {
@@ -81,9 +76,9 @@
       const t = Math.max(0, 1 - dist / RADIUS);
       const eased = t * t;
       if (eased > 0.01) {
-        circle.style.transform = `scale(${(1 + eased * 1.6).toFixed(2)})`;
-        circle.style.filter = `drop-shadow(0 0 ${(eased * 7).toFixed(1)}px ${color})`;
-        if (label) label.style.transform = `scale(${(1 + eased * 0.35).toFixed(2)})`;
+        circle.style.transform = `scale(${(1 + eased * 1.8).toFixed(2)})`;
+        circle.style.filter = `drop-shadow(0 0 ${(eased * 8).toFixed(1)}px ${color})`;
+        if (label) label.style.transform = `scale(${(1 + eased * 0.4).toFixed(2)})`;
       } else {
         circle.style.transform = '';
         circle.style.filter = '';
