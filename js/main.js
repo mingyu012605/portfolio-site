@@ -42,6 +42,66 @@
 })();
 
 // ---------------------------------------------------------------------------
+// Hero network graph: nodes grow as the cursor approaches them
+// ---------------------------------------------------------------------------
+(function () {
+  const graph = document.querySelector('.hero__graph');
+  if (!graph) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const nodes = Array.from(graph.querySelectorAll('.hero__node')).map((circle) => ({
+    circle,
+    label: circle.nextElementSibling && circle.nextElementSibling.classList.contains('hero__node-label')
+      ? circle.nextElementSibling
+      : null,
+    cx: parseFloat(circle.getAttribute('cx')),
+    cy: parseFloat(circle.getAttribute('cy')),
+    color: circle.classList.contains('hero__node--warm') ? 'var(--accent-2)' : 'var(--accent)',
+  }));
+
+  // The pop-in entrance animation holds its final transform forever (fill: both),
+  // which would otherwise override any transform set from here.
+  nodes.forEach(({ circle, label }) => {
+    circle.addEventListener('animationend', () => { circle.style.animation = 'none'; }, { once: true });
+    if (label) label.addEventListener('animationend', () => { label.style.animation = 'none'; }, { once: true });
+  });
+
+  const RADIUS = 190;
+  const point = graph.createSVGPoint();
+
+  graph.addEventListener('mousemove', (e) => {
+    const ctm = graph.getScreenCTM();
+    if (!ctm) return;
+    point.x = e.clientX;
+    point.y = e.clientY;
+    const svgPoint = point.matrixTransform(ctm.inverse());
+
+    nodes.forEach(({ circle, label, cx, cy, color }) => {
+      const dist = Math.hypot(svgPoint.x - cx, svgPoint.y - cy);
+      const t = Math.max(0, 1 - dist / RADIUS);
+      const eased = t * t;
+      if (eased > 0.01) {
+        circle.style.transform = `scale(${(1 + eased * 1.6).toFixed(2)})`;
+        circle.style.filter = `drop-shadow(0 0 ${(eased * 7).toFixed(1)}px ${color})`;
+        if (label) label.style.transform = `scale(${(1 + eased * 0.35).toFixed(2)})`;
+      } else {
+        circle.style.transform = '';
+        circle.style.filter = '';
+        if (label) label.style.transform = '';
+      }
+    });
+  });
+
+  graph.addEventListener('mouseleave', () => {
+    nodes.forEach(({ circle, label }) => {
+      circle.style.transform = '';
+      circle.style.filter = '';
+      if (label) label.style.transform = '';
+    });
+  });
+})();
+
+// ---------------------------------------------------------------------------
 // Fade images in as they finish loading
 // ---------------------------------------------------------------------------
 (function () {
