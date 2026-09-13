@@ -405,8 +405,12 @@ main > section {
 }
 .hero__headline {
   font-size: clamp(1.05rem, 2vw, 1.2rem);
-  color: var(--text-muted);
   max-width: 46ch;
+  margin-bottom: 0.5rem;
+}
+.hero__sub {
+  color: var(--text-muted);
+  max-width: 48ch;
   margin-bottom: 0;
 }
 .hero__actions {
@@ -686,28 +690,6 @@ main > section {
 .about { border-top: 1px solid var(--border); }
 .about__text { color: var(--text-muted); }
 .about__text:first-of-type { color: var(--text); font-size: 1.05rem; }
-.about__grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 3rem;
-  align-items: start;
-  margin-top: 1rem;
-}
-.about__col { max-width: 62ch; }
-@media (max-width: 760px) {
-  .about__grid { grid-template-columns: 1fr; gap: 1.5rem; }
-}
-.about__facts { margin: 0; display: grid; gap: 1.1rem; }
-.about__fact { border-top: 1px solid var(--border); padding-top: 0.75rem; }
-.about__fact dt {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 0.25rem;
-}
-.about__fact dd { margin: 0; font-weight: 600; }
 
 /* Contact: full-bleed dark block, matching the reference's footer treatment */
 .contact {
@@ -724,14 +706,6 @@ main > section {
 }
 @media (max-width: 760px) {
   .contact__grid { grid-template-columns: 1fr; gap: 2rem; }
-}
-.contact__eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--accent-2);
-  margin-bottom: 0.75rem;
 }
 .contact__title {
   font-size: clamp(2.2rem, 5vw, 3.2rem);
