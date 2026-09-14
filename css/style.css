@@ -455,6 +455,31 @@ main > section {
 .link-cta__arrow { display: inline-block; transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
 .link-cta:hover .link-cta__arrow { transform: translateY(3px); }
 
+.case-study-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  appearance: none;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.4rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+.case-study-btn:hover {
+  background: var(--accent-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.case-study-btn .link-cta__arrow { transform: translateX(0); }
+.case-study-btn:hover .link-cta__arrow { transform: translateX(4px); }
+
 @keyframes fade-in-up {
   from { opacity: 0; transform: translateY(18px); }
   to { opacity: 1; transform: translateY(0); }
