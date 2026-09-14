@@ -105,14 +105,14 @@ img.fade-img.is-loaded { opacity: 1; }
 .section-eyebrow__num {
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--accent-2-strong);
+  color: var(--accent-strong);
   letter-spacing: 0.04em;
 }
 .section-eyebrow__dash {
   display: inline-block;
   width: 2.4rem;
   height: 2px;
-  background: var(--accent-2);
+  background: var(--accent);
   border-radius: var(--radius-full);
   transform: scaleX(0);
   transform-origin: left;
@@ -218,7 +218,7 @@ main > section {
   right: 0;
   bottom: -2px;
   height: 2px;
-  background: var(--accent-2);
+  background: var(--accent);
   border-radius: var(--radius-full);
   transform: scaleX(0);
   transform-origin: left;
@@ -533,13 +533,13 @@ main > section {
 .project-carousel__slide.is-current {
   opacity: 1;
   transform: scale(1);
-  box-shadow: 0 0 0 3px var(--accent-2), var(--shadow-lg);
+  box-shadow: 0 0 0 3px var(--accent), var(--shadow-lg);
   z-index: 2;
 }
 .project-carousel__slide.is-current:hover,
 .project-carousel__slide.is-current:focus-visible {
   transform: scale(1.035);
-  box-shadow: 0 0 0 3px var(--accent-2), 0 14px 34px rgba(224, 165, 46, 0.4), var(--shadow-lg);
+  box-shadow: 0 0 0 3px var(--accent), 0 14px 34px rgba(36, 85, 164, 0.35), var(--shadow-lg);
 }
 .project-carousel__slide.is-current:hover img {
   transform: scale(1.06);
